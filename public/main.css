@@ -1,0 +1,75 @@
+/*
+
+	PartySync logo color animation
+
+*/
+.change-colors {
+	-webkit-animation-direction: normal;
+	-webkit-animation-duration: 10s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name: colours;
+	-webkit-animation-timing-function: ease;
+}
+@-webkit-keyframes colours {
+	  0% {color: #39f;}
+	 15% {color: #8bc5d1;}
+	 30% {color: #f8cb4a;}
+	 45% {color: #95b850;}
+	 60% {color: #944893;}
+	 75% {color: #c71f00;}
+	 90% {color: #bdb280;}
+	100% {color: #39f;}
+}
+
+/*	
+
+	Background Image Heading	
+
+*/
+.header-content {
+	margin-top: -20px; /* added this because there was a gap between the nav and the image */
+	height: 500px;
+	text-align: center;
+	background-image: url("https://images.unsplash.com/photo-1416453072034-c8dbfa2856b5?crop=entropy&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1300");
+	background-size: cover;
+	background-position: center;
+	padding-top: 12%;
+	color: #33FFCC;
+}
+.header-content h3 {
+	font-size: 3rem;
+}
+.header-content h1 {
+	font-size: 5rem;
+}
+.btn-default {
+	color: white;
+	background-color: #66FFFF;
+}
+.btn-default:hover {
+	color: white;
+	background-color: #66FFCC;	
+}
+/* color style for h1 and h3 */
+.color-me {
+	color: white;
+}
+
+
+/*change the class name*/
+.add-content {
+	text-align: center;
+	border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
