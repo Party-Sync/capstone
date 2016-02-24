@@ -31,27 +31,45 @@
 	height: 500px;
 	text-align: center;
 	background-image: url("https://images.unsplash.com/photo-1416453072034-c8dbfa2856b5?crop=entropy&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1300");
+	/*background-image: url("http://wallpaperlayer.com/img/2015/6/party-wallpaper-hd-3171-3372-hd-wallpapers.jpg");*/
 	background-size: cover;
 	background-position: center;
 	padding-top: 12%;
-	color: #33FFCC;
+	color: white;
 }
+
+/* Text-shadow for the headers */
 .header-content h3 {
-	font-size: 3rem;
+	position: relative;
+	bottom: 50px;
+	font-size: 4rem;
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 2),
+				 0px 8px 13px rgba(0, 0, 0, 1),
+				 0px 18px 23px rgba(0, 0, 0, 1);
 }
 .header-content h1 {
-	font-size: 5rem;
+	position: relative;
+	bottom: 50px;
+	font-size: 6rem;
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 2),
+				 0px 8px 13px rgba(0, 0, 0, 1),
+				 0px 18px 23px rgba(0, 0, 0, 1);
 }
-.btn-default {
+
+hr {
+	position: relative;
+	bottom: 50px;
+	width: 65%;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+	padding: 10px;
+	font-size: 2rem;
 	color: white;
-	background-color: #66FFFF;
 }
-.btn-default:hover {
-	color: white;
-	background-color: #66FFCC;	
-}
-/* color style for h1 and h3 */
-.color-me {
+.btn:hover {
 	color: white;
 }
 
@@ -61,6 +79,8 @@
 	text-align: center;
 	border: 1px solid black;
 }
+
+
 
 
 
