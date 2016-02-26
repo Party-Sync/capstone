@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<!-- Our CSS -->
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 </head>
 <body>
 	<!-- NAVBAR -->
@@ -38,57 +39,53 @@
 			<!-- <hr> -->
 			<button class="btn btn-primary" type="submit">Start Partying</button>
 		</div>
-		<div class="row">
-			<!-- Change class name and add content -->
-			<div class="col-md-4 col-sm-4 add-content">ADD CONTENT</div>
-			<div class="col-md-4 col-sm-4 add-content">ADD CONTENT</div>
-			<div class="col-md-4 col-sm-4 add-content">ADD CONTENT</div>
+		<div class="row search-center">
+			<input id="location-address" type="text" class="search-input" placeholder="Where do you want to party?">
+			<button class="btn btn-primary btn-sm" id="map-address-btn"><span>Find It</span></button>
+			<!-- <div id="map-canvas" style="height: 400px;"></div> -->
 		</div>
+		<div class="row search-row">
+			<div id="side-bar-data" class="col-sm-4 col-md-4 side-bar">
+			</div>
+			<div class="col-sm-8 col-md-8 map-col">
+				<div id="map-canvas" style="height: 400px;"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-container">
+		<h4>HOST FORM</h4>
+		<form>
+		    <p>
+		        <input id="address" class="address-input" name="address" type="text" placeholder="Enter valid address">
+		    </p>
+		    <p>
+		        <input id="description" class="description-input" name="description" type="text" placeholder="Type">
+		    </p>
+		    <p>
+		        <input id="age" class="age-input" name="age" type="text" placeholder="Age restriction">
+		    </p>
+		    <p>
+		        <input id="guest-max" class="guest-input" name="guest" type="text" placeholder="Max Guests">
+		    </p>
+		    <p>
+		        <input id="time" class="time-input" name="time" type="text" placeholder="Start-End Time">
+		    </p>		    
+		    <p>
+		        <input id="post-party-btn" type="submit">
+		    </p>
+		</form>
 	</div>
 
 
 
 
-<div class="container-fluid">
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
- <ol class="carousel-indicators">
-   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-   <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-   <li data-target="#carousel-example-generic" data-slide-to="2"></li>
- </ol>
-
- <div class="carousel-inner">
-   <div class="active item">
-     <img src="http://lorempixel.com/1200/315" alt="...">
-     <div class="carousel-content">
-       <p>TEST</p>
-     </div>
-     <div class="carousel-caption">
-       <h3>What we do</h3>
-     </div>
-   </div>
-   <div class="item">
-     <img src="http://placehold.it/1200x315" alt="...">
-     <div class="carousel-caption">
-       <h3>What we Do</h3>
-     </div>
-   </div>
-   <div class="item">
-     <img src="http://placehold.it/1200x315" alt="...">
-     <div class="carousel-caption">
-       <h3>Who we Are</h3>
-     </div>
-   </div>
- </div>
-</div>
-
-</div>
 
 
 
 
-
-
+<!-- Google Maps API Key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChaHixMQ88Nfqh2jefnRQIn4aqJR84B60"></script>
 <!-- JQuery CDN -->
 <script src="//code.jquery.com/jquery-latest.min.js"></script>
 <!-- Bootstrap JS -->

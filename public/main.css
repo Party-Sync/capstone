@@ -66,7 +66,7 @@ hr {
 
 .btn {
 	padding: 10px;
-	font-size: 2rem;
+	/*font-size: 2rem;*/
 	color: white;
 }
 .btn:hover {
@@ -74,22 +74,41 @@ hr {
 }
 
 
-/*change the class name*/
-.add-content {
+.search-center {
 	text-align: center;
-	border: 1px solid black;
 }
 
+#map-canvas {
+	width: 100%;
+	display: none;
+}
+.form-container {
+	padding: 50px 0 100px 100px;
+}
 
+.address-input, 
+.description-input,
+.age-input,
+.guest-input,
+.time-input, 
+.search-input {
+	width: 50%;
+}
 
-
-
-
-
-
-
-
-
-
+/*.map-col {
+	border: 1px solid black;
+}*/
+/*.side-bar {
+	border: 1px solid black;
+}*/
+#side-bar-data {
+	float: left;
+	overflow: scroll;
+	height: 400px;
+}
+.side-bar-border {
+	border-bottom: 1px solid black;
+	padding: 5px;
+}
 
 
