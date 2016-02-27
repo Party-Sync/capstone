@@ -2,66 +2,122 @@
 <html>
 <head>
 	<title>Party Sync</title>
-	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
 	<!-- Latest compiled and minified CSS Bootstrap-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css">
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+
 	<!-- Our CSS -->
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<link rel="stylesheet" type="text/css" href="carousel.css">
-	<link href='https://fonts.googleapis.com/css?family=Poiret+One|Shadows+Into+Light|Dancing+Script' rel='stylesheet' type='text/css'>
-	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+	
 </head>
 <body>
+	<h1>Lets Party!</h1>
 
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-<!-- added animation here -->
-			<a href="#" class="navbar-brand"><span class="change-colors">Party</span>Sync</a>
+
+<div class="container-fluid">
+		<!-- Seach party input field with submit button -->
+		<div class="row search-center">
+			<input id="location-address" type="text" class="search-input" placeholder="Enter City Name">
+			<button id="map-address-btn" class="btn btn-primary btn-sm"><span>Find It</span></button>
 		</div>
-		<div class="collapse navbar-collapse" id="bs-nav-demo">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Login</a></li>
-			</ul>
+
+	<!-- Side Bar and Google Map -->
+		<div class="row search-row">
+			<div class="col-xs-8 col-sm-8 col-md-8 map-col">
+				<div id="map-canvas" style="height: 400px;"></div>
+			</div>
+			<div id="side-bar-data" class="col-xs-4 col-sm-4 col-md-4 side-bar">
+			</div>
 		</div>
-	</div>
-</nav>
+	<!-- END of sidebar and map -->
 
-<!-- NAVBAR -->
-<div class="container">
-<div class="row">
+	<!-- Button trigger modal for HOST FORM -->
+		<button class = "btn btn-primary btn-lg" data-toggle = "modal" data-target = "#myModal">
+		   HOST 
+		</button>
 
-<!-- Wrapper for slides -->
+	<!-- Modal for HOST FORM -->
+		<div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" 
+		   aria-labelledby = "myModalLabel" aria-hidden = "true">
+		   
+		   <div class = "modal-dialog">
+		      <div class = "modal-content">
+		         
+		         <div class = "modal-header">
+		            <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+		                  &times;
+		            </button>
+		            
+		            <h2 class = "modal-title" id = "myModalLabel">
+		               Host Form
+		            </h2>
 
-<div class="carousel-inner">
-    <div class="item active">
-    	<img src="/img/pic1.jpg" alt="First slide">
-
-<!-- Static Header -->
-
-	<div class="header-text hidden-xs">
-		<div class="col-md-12 text-center">
-			<h2><span class="header">Welcome to <strong>PartySync</strong></span></h2><br>
-				<h3><span class="header">"Creating new friends, one party at a time."</span></h3><br>
-					<div class="loginDiv">
-						<a class="btn btn-theme btn-sm btn-min-block" data-toggle="modal" data-target="#register" href="#">Host a Party</a>
-						<a class="btn btn-theme btn-sm btn-min-block" href="#">Attend a Party</a>
+		            <button type-"button" class="btn-social btn-facebook btn-lg">
+			        	<span class="fa fa-facebook"></span>Facebook
+			        </button>
+			        
+		         </div>
+		         
+		         <div class = "modal-body">
+		            
+					<div class="form-container">
+						<form>
+						    <p>
+						        <input id="address" class="address-input" name="address" type="text" placeholder="Enter Address">
+						    </p>
+						    <p>
+						        <input id="description" class="description-input" name="description" type="text" placeholder="Type">
+						    </p>
+						    <p>
+						        <input id="age" class="age-input" name="age" type="text" placeholder="Age restriction">
+						    </p>
+						    <p>
+						        <input id="guest-max" class="guest-input" name="guest" type="text" placeholder="Max Guests">
+						    </p>
+						    <p>
+						        <input id="time" class="time-input" name="time" type="text" placeholder="Start-End Time">
+						    </p>
+						    <p>
+						        <input id="date" class="date-input" name="date" type="text" placeholder="Date">
+						    </p>
+						    <p>
+						        <input id="email" class="email-input" name="email" type="text" placeholder="Email">
+						    </p>
+						    <p>
+						        <input id="phoneNumber" class="phone-input" name="phoneNumber" type="text" placeholder="Phone Number">
+						    </p>		    
+						</form>
 					</div>
-				<h3 class="howThisWorks">How this Works:</h3>
-		</div>
-		
+
+		         </div>
+		         
+		         <div class = "modal-footer">
+		            <button type = "button" class = "btn btn-primary" data-dismiss = "modal">
+		               Close
+		            </button>
+		            <!-- SUBMIT and add the form data into Firebase -->
+		           	<input id="post-party-btn" class="btn btn-primary" type="submit">
+		         </div>
+		         
+		      </div><!-- /.modal-content -->
+		   </div><!-- /.modal-dialog -->
+		  
+		</div><!-- /.modal -->
+	
+	</div> <!-- end of container-fluid -->
+
+
+<!-- Trigger the Register modal with a button -->
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#wtfregister">Start The Party</button>
+
 <!-- Register Modal content-->
-		<div id="register" class="modal fade" role="dialog">
+		<div id="wtfregister" class="modal fade" role="dialog">
 		  <div class="modal-dialog">
-
-
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -79,51 +135,24 @@
 			        </button>
 
 		      <div class="modal-footer">
-		      	
 		      </div>
 		    </div>
+	</div>
+</div>
 
 <!-- Register Modal End -->
 
-<!-- How-to-info Header   -->
-			<div class="row">
-				<div class="col-md-6">
-					<h4 class="hostParty">Hosting a Party</h4>
-						<p class="host">Last minute cancellations, extra space or just interested in meetin new people</p> 
-				</div>
-				<div class="col-md-6">
-					<h4 class="attendParty">Attend a Party</h4>
-						<p class="attend">New to town?</p>
-						<p class="attend">No plans?</p>
-						<p class="attend">Interested in meeting new people?</p>
-				</div>
-			</div>
-<!--         <div class="row">
-        	<div class="col-md-4"><a class="btn btn-theme btn-sm btn-min-block" href="#">Host a Party</a></div>
-        	<div class="col-md-4"><a class="btn btn-theme btn-sm btn-min-block" href="#">View Parties</a></div>
-        	<div class="col-md-4"><a class="btn btn-theme btn-sm btn-min-block" href="#">Search Parties</a></div>
-        </div>
-      </div> -->
-	<div class="row">
-		<div>
-	      <footer class="footer">
-	        <p>&copy; 2016 PartySync, NotInc.</p>
-	      </footer> 
-	    </div>
-    </div>
-    </div>
-</div>
-<!-- How-to explanation -->
 
 
-<!-- /container -->
+<!-- Google Maps API Key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChaHixMQ88Nfqh2jefnRQIn4aqJR84B60"></script>
 
 
-<!-- JQuery CDN -->
-<script src="//code.jquery.com/jquery-latest.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src="main.js"></script>
+	<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
