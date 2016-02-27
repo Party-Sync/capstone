@@ -2,8 +2,128 @@
 <html>
 <head>
 	<title>Party Sync</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Our CSS -->
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="carousel.css">
+	<link href='https://fonts.googleapis.com/css?family=Poiret+One|Shadows+Into+Light|Dancing+Script' rel='stylesheet' type='text/css'>
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 </head>
 <body>
-	<h1>Lets Party!</h1>
+
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+<!-- added animation here -->
+			<a href="#" class="navbar-brand"><span class="change-colors">Party</span>Sync</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-nav-demo">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Login</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- NAVBAR -->
+<div class="container">
+<div class="row">
+
+<!-- Wrapper for slides -->
+
+<div class="carousel-inner">
+    <div class="item active">
+    	<img src="/img/pic1.jpg" alt="First slide">
+
+<!-- Static Header -->
+
+	<div class="header-text hidden-xs">
+		<div class="col-md-12 text-center">
+			<h2><span class="header">Welcome to <strong>PartySync</strong></span></h2><br>
+				<h3><span class="header">"Creating new friends, one party at a time."</span></h3><br>
+					<div class="loginDiv">
+						<a class="btn btn-theme btn-sm btn-min-block" data-toggle="modal" data-target="#register" href="#">Host a Party</a>
+						<a class="btn btn-theme btn-sm btn-min-block" href="#">Attend a Party</a>
+					</div>
+				<h3 class="howThisWorks">How this Works:</h3>
+		</div>
+		
+<!-- Register Modal content-->
+		<div id="register" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Select Your Preferred Social Account to Continue:</h4>
+		      </div>
+		      <div class="modal-body">
+			        <button type-"button" class="btn-social btn-facebook btn-lg">
+			        	<span class="fa fa-facebook"></span>Facebook
+			        </button>
+			        <button type-"button" class="btn-social btn-twitter btn-lg">
+			        	<span class="fa fa-twitter"></span>Twitter
+			        </button>
+			        <button type-"button" class="btn-social btn-google btn-lg">
+			        	<span class="fa fa-google"></span>Google
+			        </button>
+
+		      <div class="modal-footer">
+		      	
+		      </div>
+		    </div>
+
+<!-- Register Modal End -->
+
+<!-- How-to-info Header   -->
+			<div class="row">
+				<div class="col-md-6">
+					<h4 class="hostParty">Hosting a Party</h4>
+						<p class="host">Last minute cancellations, extra space or just interested in meetin new people</p> 
+				</div>
+				<div class="col-md-6">
+					<h4 class="attendParty">Attend a Party</h4>
+						<p class="attend">New to town?</p>
+						<p class="attend">No plans?</p>
+						<p class="attend">Interested in meeting new people?</p>
+				</div>
+			</div>
+<!--         <div class="row">
+        	<div class="col-md-4"><a class="btn btn-theme btn-sm btn-min-block" href="#">Host a Party</a></div>
+        	<div class="col-md-4"><a class="btn btn-theme btn-sm btn-min-block" href="#">View Parties</a></div>
+        	<div class="col-md-4"><a class="btn btn-theme btn-sm btn-min-block" href="#">Search Parties</a></div>
+        </div>
+      </div> -->
+	<div class="row">
+		<div>
+	      <footer class="footer">
+	        <p>&copy; 2016 PartySync, NotInc.</p>
+	      </footer> 
+	    </div>
+    </div>
+    </div>
+</div>
+<!-- How-to explanation -->
+
+
+<!-- /container -->
+
+
+<!-- JQuery CDN -->
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
 </body>
 </html>
