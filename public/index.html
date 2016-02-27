@@ -11,39 +11,14 @@
 	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 </head>
 <body>
-	<!-- NAVBAR -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<!-- added animation here -->
-				<a href="#" class="navbar-brand"><span class="change-colors">Party</span>Sync</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-nav-demo">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Login</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- Background Image with headers and a button -->
+
 	<div class="container-fluid">
-		<div class="row header-content">
-			<h3>Host a party. Find a party.</h3>
-			<h1>Be the life of the party</h1>
-			<!-- <hr> -->
-			<button class="btn btn-primary" type="submit">Start Partying</button>
-		</div>
+		<!-- Seach party input field with submit button -->
 		<div class="row search-center">
-			<input id="location-address" type="text" class="search-input" placeholder="Where do you want to party?">
-			<button class="btn btn-primary btn-sm" id="map-address-btn"><span>Find It</span></button>
-			<!-- <div id="map-canvas" style="height: 400px;"></div> -->
+			<input id="location-address" type="text" class="search-input" placeholder="Enter City Name">
+			<button id="map-address-btn" class="btn btn-primary btn-sm"><span>Find It</span></button>
 		</div>
+		<!-- Side Bar and Google Map -->
 		<div class="row search-row">
 			<div id="side-bar-data" class="col-sm-4 col-md-4 side-bar">
 			</div>
@@ -51,34 +26,76 @@
 				<div id="map-canvas" style="height: 400px;"></div>
 			</div>
 		</div>
-	</div>
 
-	<div class="form-container">
-		<h4>HOST FORM</h4>
-		<form>
-		    <p>
-		        <input id="address" class="address-input" name="address" type="text" placeholder="Enter valid address">
-		    </p>
-		    <p>
-		        <input id="description" class="description-input" name="description" type="text" placeholder="Type">
-		    </p>
-		    <p>
-		        <input id="age" class="age-input" name="age" type="text" placeholder="Age restriction">
-		    </p>
-		    <p>
-		        <input id="guest-max" class="guest-input" name="guest" type="text" placeholder="Max Guests">
-		    </p>
-		    <p>
-		        <input id="time" class="time-input" name="time" type="text" placeholder="Start-End Time">
-		    </p>		    
-		    <p>
-		        <input id="post-party-btn" type="submit">
-		    </p>
-		</form>
-	</div>
+		<!-- Button trigger modal for HOST FORM -->
+		<button class = "btn btn-primary btn-lg" data-toggle = "modal" data-target = "#myModal">
+		   HOST 
+		</button>
 
+		<!-- Modal for HOST FORM -->
+		<div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" 
+		   aria-labelledby = "myModalLabel" aria-hidden = "true">
+		   
+		   <div class = "modal-dialog">
+		      <div class = "modal-content">
+		         
+		         <div class = "modal-header">
+		            <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+		                  &times;
+		            </button>
+		            
+		            <h2 class = "modal-title" id = "myModalLabel">
+		               Host Form
+		            </h2>
+		         </div>
+		         
+		         <div class = "modal-body">
+		            
+					<div class="form-container">
+						<form>
+						    <p>
+						        <input id="address" class="address-input" name="address" type="text" placeholder="Enter Address">
+						    </p>
+						    <p>
+						        <input id="description" class="description-input" name="description" type="text" placeholder="Type">
+						    </p>
+						    <p>
+						        <input id="age" class="age-input" name="age" type="text" placeholder="Age restriction">
+						    </p>
+						    <p>
+						        <input id="guest-max" class="guest-input" name="guest" type="text" placeholder="Max Guests">
+						    </p>
+						    <p>
+						        <input id="time" class="time-input" name="time" type="text" placeholder="Start-End Time">
+						    </p>
+						    <p>
+						        <input id="date" class="date-input" name="date" type="text" placeholder="Date">
+						    </p>
+						    <p>
+						        <input id="email" class="email-input" name="email" type="text" placeholder="Email">
+						    </p>
+						    <p>
+						        <input id="phoneNumber" class="phone-input" name="phoneNumber" type="text" placeholder="Phone Number">
+						    </p>		    
+						</form>
+					</div>
 
-
+		         </div>
+		         
+		         <div class = "modal-footer">
+		            <button type = "button" class = "btn btn-primary" data-dismiss = "modal">
+		               Close
+		            </button>
+		            <!-- SUBMIT and add the form data into Firebase -->
+		           	<input id="post-party-btn" class="btn btn-primary" type="submit">
+		         </div>
+		         
+		      </div><!-- /.modal-content -->
+		   </div><!-- /.modal-dialog -->
+		  
+		</div><!-- /.modal -->
+	
+	</div> <!-- end of container-fluid -->
 
 
 

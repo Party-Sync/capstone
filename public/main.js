@@ -14,7 +14,7 @@
 	}
 	
 	// function to geocode an address and plot it on a map
-	function codeAddress(address, description, time, space, age, search) {
+	function codeAddress(address, description, time, space, age, search, partyDate, email, phone) {
 		geocoder.geocode( { 'address': address}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 				if (description != undefined) {
@@ -29,11 +29,12 @@
 						console.log(results);
 						
 						var infowindow = new google.maps.InfoWindow({
-		    				content: "<p><strong>Party description:</strong> "
-		    				 + description + "</p><p class='hide-party-location'><strong>Party Location:</strong> "
-		    				  + address + "</p><p><strong>Time:</strong> " + time + "</p><p><strong>Guest Limit:</strong> "
-		    				   + space + "</p><p><strong>Age Restriction:</strong> " + age + "</p>" + 
-		    				   "<button id='attend-button' class='btn btn-primary btn-sm'>Attend</button>"
+		    				content: "<p><strong>Party description:</strong> " + description +
+		    				 "</p><p><strong>Age Restriction:</strong> " + age + 
+		    				 "</p><p><strong>Guest Limit:</strong> " + space + 
+		    				 "</p><p><strong>Date:</strong> " + date + "</p><p><strong>Time:</strong> " 
+		    				 + time + "</p><p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> " 
+		    				 + phone + "</p><p><strong>Address:</strong> " + address + "</p>"
 						});							
 
 						// Open the window using our map and marker
@@ -43,10 +44,9 @@
 
 						// add data to side bar here
 						$("#side-bar-data").append( "<div class='side-bar-border'><p><strong>Party description:</strong> "
-		    				 + description + "</p><p class='hide-party-location'><strong>Party Location:</strong> "
+		    				 + description + "</p><p><strong>Party Location:</strong> "
 		    				  + address + "</p><p><strong>Time:</strong> " + time + "</p><p><strong>Guest Limit:</strong> "
-		    				   + space + "</p><p><strong>Age Restriction:</strong> " + age + "</p>" + 
-		    				   "<button id='attend-button' class='btn btn-primary btn-sm'>Attend</button></div>");
+		    				   + space + "</p><p><strong>Age Restriction:</strong> " + age + "</p></div>");
 					}
 				} else {
 					map.setCenter(results[0].geometry.location);
@@ -64,10 +64,13 @@
 	var fireDB = new Firebase("https://partysync16.firebaseio.com/");
 
 	fireDB.child("post-party").on("value", function(snapshot) {
-	/*
-		POST - host only
-	*/ 
-	$(document).ready(function() {
+		console.log(snapshot.val());
+	});
+
+	$(document).ready(function() {	
+		/*
+			POST - host only
+		*/ 
 		$("#post-party-btn").click(function() {
 			event.preventDefault();
 
@@ -76,18 +79,25 @@
 			var age = $("#age").val();
 			var guestMax = $("#guest-max").val();
 			var time = $("#time").val();
+
+			var date = $("#date").val();
+			var email = $("#email").val();
+			var phone = $("#phoneNumber").val();
 			// Users input
 			var data = {
 				"address": address,
 				"description": description,
 				"ageRestriction": age,
 				"guestLimit": guestMax,
-				"time": time
+				"time": time,
+				"date": date,
+				"email": email,
+				"phone": phone
 			}
 			// this will push data
 			fireDB.child("post-party").push(data);
 			console.log(data)
-			console.log(snapshot.val());
+			
 		});
 
 		/*
@@ -95,6 +105,9 @@
 		*/ 
 		$("#map-address-btn").click(function() {
 			event.preventDefault();	
+			
+
+		fireDB.child("post-party").on("value", function(snapshot) {
 			// User input address
 			var address = $("#location-address").val();	
 			// Call the codeAddress() function to place marker on input location
@@ -105,20 +118,24 @@
 				// console.log(data.val().address);
 				var partyAddresses = data.val().address;
 				var partyDescription = data.val().description;
-				
 				var partyTime = data.val().time;
 				var guestSpace = data.val().guestLimit;
 				var ageLimit = data.val().ageRestriction;
 
+				var partyDate = data.val().partyDate;
+				var email = data.val().email;
+				var phone = data.val().phone;
+
 				// Call the codeAddress() function to place marker on each address
-				codeAddress(partyAddresses, partyDescription, partyTime, guestSpace, ageLimit, address);
+				codeAddress(partyAddresses, partyDescription, partyTime, guestSpace, ageLimit, address, partyDate, email, phone);
 				
 				// empties previous search result
 				$("#side-bar-data").empty();
-				$("#map-canvas").css("display", "inherit");
 			});
+		
 		});
 	});
+
 });
 
 
