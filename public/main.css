@@ -26,10 +26,11 @@
 	border: 1px solid black;
 }*/
 .side-bar {
-	border: 1px solid black;
+	/*border: 1px solid black;*/
+	display: none;
 }
 #side-bar-data {
-	float: left;
+	float: right;
 	overflow: scroll;
 	height: 400px;
 }
