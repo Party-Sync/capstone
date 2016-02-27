@@ -74,8 +74,8 @@
 }
 
 .btn-theme {
-    color: #fff;
-    background-color: transparent;
+    color: #337ab7;
+    background-color: rgba(0, 0, 0, 0.66);
     border: 2px solid #fff;
     margin-right: 15px;
     border

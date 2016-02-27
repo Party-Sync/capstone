@@ -99,7 +99,7 @@ hr {
 .btn {
 	padding: 10px;
 	font-size: 2rem;
-	color: white;
+	color: blue;
 }
 .btn:hover {
 	color: white;
@@ -169,7 +169,7 @@ div.col-md-6.attendParty {
 	padding: 50px;
 	position: relative;
 	top: 50px;
-	
+
 }
 
 
