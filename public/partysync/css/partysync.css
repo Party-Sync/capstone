@@ -219,14 +219,12 @@ footer p {
     line-height: 26px;
 }
 .btn {
-    padding: 10px;
+    padding: 10px 20px 10px 30px;
     font-size: 2rem;
     color: white;
     font-family: 'Poiret One';
-    margin-left: 200px;
     float: left;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 100px 10px 178px;
 }
 
 /*
@@ -265,16 +263,20 @@ div.col-lg-12 {
 }
 
 .faq {
-    margin-left: 345px;
+    margin-left: 325px;
+    margin-top: 20px;
 }
 
-a.attendParty {
+/*div.row.col-lg-6.attendParty {
     margin-left: 150px;
 }
+
+div.row.col-lg-6.hostParty {
+    margin-left: 30px;
+}*/
 
 /*about page*/
 
 div.col-md-6 {
-
     margin-bottom: 15px;
 }
