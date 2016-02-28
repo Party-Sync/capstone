@@ -11,28 +11,100 @@
 	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 </head>
 <body>
-
-	<div class="container-fluid">
-		<!-- Seach party input field with submit button -->
-		<div class="row search-center">
-			<input id="location-address" type="text" class="search-input" placeholder="Enter City Name">
-			<button id="map-address-btn" class="btn btn-primary btn-sm"><span>Find It</span></button>
-		</div>
-
-	<!-- Side Bar and Google Map -->
-		<div class="row search-row">
-			<div class="col-xs-8 col-sm-8 col-md-8 map-col">
-				<div id="map-canvas" style="height: 400px;"></div>
+	<!-- NAV BAR -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<!-- added animation here -->
+				<a href="#" class="navbar-brand"><span class="change-colors">Party</span>Sync</a>
 			</div>
-			<div id="side-bar-data" class="col-xs-4 col-sm-4 col-md-4 side-bar">
+			<div class="collapse navbar-collapse" id="bs-nav-demo">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Login</a></li>
+				</ul>
 			</div>
 		</div>
-	<!-- END of sidebar and map -->
+	</nav>
+
+	<!-- TITLE COTENT -->
+	<div class="container-fluid header-fluid">
+		<div class="row title-row">
+			<h1>Title</h1>
+			<h2>subtitle</h2>
+			<button class="text-center">Button</button>
+		</div>
+	</div>
+
+	
+
+
+	<div class="container modal-container">
+
+	<!-- Button trigger modal for MAPS AND SIDEBAR -->
+		<button class = "btn btn-primary btn-sm" data-toggle = "modal" data-target = "#testModal">
+		   FIND PARTY 
+		</button>
 
 	<!-- Button trigger modal for HOST FORM -->
-		<button class = "btn btn-primary btn-lg" data-toggle = "modal" data-target = "#myModal">
-		   HOST 
+		<button class = "btn btn-primary btn-sm" data-toggle = "modal" data-target = "#myModal">
+		   HOST PARTY
 		</button>
+
+	<!-- Modal for MAPS AND SIDEBAR -->
+		<div class = "modal fade" id = "testModal" tabindex = "-1" role = "dialog" 
+		   aria-labelledby = "myModalLabel" aria-hidden = "true">
+		   
+		   <div class = "modal-dialog modal-lg">
+		      <div class = "modal-content">
+		         
+		         <div class = "modal-header">
+		            <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+		                  &times;
+		            </button>
+		            
+		            <h2 class = "modal-title" id = "myModalLabel">
+		               FIND IT
+		            </h2>
+		         </div>
+		         
+		         <div class = "modal-body">
+		    
+					<!-- Seach party input field with submit button -->
+					<div class="row search-center">
+						<input id="location-address" type="text" class="search-input" placeholder="Enter City Name">
+						<button id="map-address-btn" class="btn btn-primary btn-sm"><span>Map It</span></button>
+					</div>
+
+				<!-- Side Bar and Google Map -->
+					<div class="row map-row">
+						<div class="col-xs-8 col-sm-8 col-md-8 map-col">
+							<div id="map-canvas"></div>
+						</div>
+						<div id="side-bar-data" class="col-xs-4 col-sm-4 col-md-4 side-bar">
+						</div>
+					</div>
+				<!-- END of sidebar and map -->
+		         </div>
+		         
+		         <div class = "modal-footer">
+		            <button type = "button" class = "btn btn-primary" data-dismiss = "modal">
+		               Close
+		            </button>
+		         </div>		         
+		      </div><!-- /.modal-content -->
+		   </div><!-- /.modal-dialog -->
+		  
+		</div><!-- /.modal -->
+	
+	</div> <!-- end of container -->
+
+	
 
 	<!-- Modal for HOST FORM -->
 		<div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" 
@@ -97,7 +169,7 @@
 		  
 		</div><!-- /.modal -->
 	
-	</div> <!-- end of container-fluid -->
+	</div> <!-- end of container -->
 
 
 

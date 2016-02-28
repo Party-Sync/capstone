@@ -11,8 +11,14 @@
 			center: latlng
 		}
 		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		// Re-centers and displays map properly when modal is displayed
+		$('#testModal').on('shown.bs.modal', function() {
+		  var currentCenter = map.getCenter(); 
+		  google.maps.event.trigger(map, "resize");
+		  map.setCenter(currentCenter); 
+		});
+
 	}
-	
 	// function to geocode an address and plot it on a map
 	function codeAddress(address, description, time, space, age, search, partyDate, email, phone) {
 
@@ -29,7 +35,7 @@
 						
 						console.log(address);
 						console.log(results);
-						
+
 						var infowindow = new google.maps.InfoWindow({
 		    				content: "<h4>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
 		    				 "</p><p><strong>Age Restriction:</strong> " + age + 
@@ -136,7 +142,7 @@
 				
 				// empties previous search result
 				$("#side-bar-data").empty();
-				$(".side-bar").css("display", "inherit");
+				// $(".side-bar").css("display", "inherit");
 			});
 		
 		});
