@@ -21,9 +21,9 @@ function initialize() {
 }
 
 // function to geocode an address and plot it on a map
-function codeAddress(address, description, time, space, age, search, partyDate, email, phone) {
+function codeAddress(address, description, time, space, age, search, email, phone) {
 
-	geocoder.geocode( { 'address': address}, function(results, status) {
+	geocoder.geocode( {'address': address}, function(results, status) {
 		if (status == google.maps.GeocoderStatus.OK) {
 			if (description != undefined) {
 				var index = results[0].formatted_address.toLowerCase().indexOf(search.toLowerCase());
@@ -39,22 +39,21 @@ function codeAddress(address, description, time, space, age, search, partyDate, 
 					   	content: "<div class='info-window-text'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
 					   	"</p><p><strong>Age Restriction:</strong> " + age + 
 					   	"</p><p><strong>Guest Limit:</strong> " + space + 
-					   	"</p><p><strong>Date:</strong> " + date + "</p><p><strong>Time:</strong> " 
+					   	"</p><p><strong>Time:</strong> " 
 					   	+ time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> " 
-					   	+ phone + "</p><p><strong>Address:</strong> " + address + "</p>" + "<div>"
+					   	+ phone + "</p>" + "<div>"
 					});
 					// Open the window using our map and marker
 					marker.addListener("click", function() {
 						infowindow.open(map, marker);
 					});
 
-					// add data to side bar here
+					// displays only searched location parties.
 					$("#side-bar-data").append( "<div class='side-bar-border'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
 					   	"</p><p><strong>Age Restriction:</strong> " + age + 
 					   	"</p><p><strong>Guest pmit:</strong> " + space + 
-					   	"</p><p><strong>Date:</strong> " + date + "</p><p><strong>Time:</strong> " 
-					   	+ time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> " 
-					   	+ phone + "</p><p><strong>Address:</strong> " + address + "</p>" + "</div>");
+					   	"</p><p><strong>Time:</strong> " + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> " 
+					   	+ phone + "</p>" + "</div>");
 				}
 			} else {
 				map.setCenter(results[0].geometry.location);
@@ -73,6 +72,16 @@ var fireDB = new Firebase("https://partysync16.firebaseio.com/");
 
 fireDB.child("post-party").on("value", function(snapshot) {
 	console.log(snapshot.val());
+	// displays "all parties" in side bar.
+	snapshot.forEach(function(snap) {
+		$("#side-bar-data").append( "<div class='side-bar-border'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + snap.val().description +
+		   	"</p><p><strong>Age Restriction:</strong> " + snap.val().age + 
+		   	"</p><p><strong>Guest Limit:</strong> " + snap.val().space + 
+		   	"</p><p><strong>Time:</strong> " 
+		   	+ snap.val().time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + snap.val().email + "</p><p><strong>Phone Number:</strong> " 
+		   	+ snap.val().phone + "</p>" + "</div>");
+
+	});
 });
 
 $(document).ready(function() {
@@ -87,8 +96,7 @@ $(document).ready(function() {
 		var age = $("#age").val();
 		var guestMax = $("#guest-max").val();
 		var time = $("#time").val();
-
-		var date = $("#date").val();
+		// var date = $("#date").val();
 		var email = $("#email").val();
 		var phone = $("#phoneNumber").val();
 		// Users input
@@ -98,14 +106,17 @@ $(document).ready(function() {
 			"ageRestriction": age,
 			"guestLimit": guestMax,
 			"time": time,
-			"date": date,
+			// "date": date,
 			"email": email,
 			"phone": phone
 		}
-		// this will push data
+		// this will push data to firebase
 		fireDB.child("post-party").push(data);
 		console.log(data)
+		// alert user party has been posted
 		alert("Event has been posted");
+		// clear the inputs when sumbit button is clicked
+		$("input").val("");
 	});
 
 	/*
@@ -127,16 +138,13 @@ $(document).ready(function() {
 				var partyTime = data.val().time;
 				var guestSpace = data.val().guestLimit;
 				var ageLimit = data.val().ageRestriction;
-
-				var partyDate = data.val().partyDate;
 				var email = data.val().email;
 				var phone = data.val().phone;
 
 				// Call the codeAddress() function to place marker on each address
-				codeAddress(partyAddresses, partyDescription, partyTime, guestSpace, ageLimit, address, partyDate, email, phone);
+				codeAddress(partyAddresses, partyDescription, partyTime, guestSpace, ageLimit, address, email, phone);
 				// empties previous search result
 				$("#side-bar-data").empty();
-				// $(".side-bar").css("display", "inherit");
 			});
 		});
 	});
