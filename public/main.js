@@ -75,7 +75,7 @@
 	var fireDB = new Firebase("https://partysync16.firebaseio.com/");
 
 	fireDB.child("post-party").on("value", function(snapshot) {
-		console.log(snapshot.val());
+		console.log(snapshot.val());	
 	});
 
 	$(document).ready(function() {	
@@ -108,7 +108,7 @@
 			// this will push data
 			fireDB.child("post-party").push(data);
 			console.log(data)
-			
+			alert("Event has been posted");
 		});
 
 		/*
