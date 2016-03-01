@@ -149,11 +149,13 @@ p.attend {
 	margin-left: 100px;
 }
 
-div.col-md-4 {
+div.col-md-6 {
 	font-family: 'Poiret One';
+	margin-top: 50px;
 }
 
-div.col-md-4.attendParty {
+div.col-md-6.attendParty {
+	margin-left: 50px;
 	font-size: 24px;
 }
 
