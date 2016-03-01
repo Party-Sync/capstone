@@ -113,11 +113,6 @@ footer {
     background: rgba(255,255,255,0.9);
 }
 
-footer p {
-    margin: 0;
-    padding: 50px 0;
-}
-
 @media screen and (min-width:768px) {
     .brand {
         display: inherit;
@@ -226,8 +221,6 @@ footer p {
     font-size: 2rem;
     color: white;
     font-family: 'Poiret One';
-    /*float: left;*/
-    /*margin: 10px 100px 10px 178px;*/
 }
 
 /* PartySync logo color animation */
@@ -262,8 +255,11 @@ div.col-lg-12 {
     padding-bottom: 10px;
 }
 
+/* positioning faq button to be centered (or looked centered) */
 .faq-col {
     text-align: center;
+    position: relative;
+    right: 20px;
 }
 
 /*about page*/
@@ -278,7 +274,7 @@ div.col-md-6 {
     width: 100%;
     height: 400px;
 }
-
+/* Side bar in modal */
 #side-bar-data {
     float: right;
     overflow: scroll;
@@ -289,4 +285,21 @@ div.col-md-6 {
     padding: 5px;
     text-align: left;
 }
-
+/* HOST input feilds in modal*/
+.address-input, 
+.description-input,
+.age-input,
+.guest-input,
+.time-input, 
+.search-input,
+.date-input,
+.email-input,
+.phone-input {
+    margin: 10px 0 10px 0;
+    width: 85%;
+}
+/* positioning the copyright to be centered */
+.move-rt-lil {
+    position: relative;
+    right: 13px;
+}
