@@ -1,5 +1,3 @@
-console.log("yoyo");
-
 "use strict";
 var geocoder;
 var map;
