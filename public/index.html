@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 	<title>Party Sync</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
@@ -154,5 +155,152 @@
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
+=======
+  <title>Party Sync</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+</head>
+<body>
+
+  <!-- Button trigger modal for MAPS AND SIDEBAR -->
+  <button class = "btn btn-primary btn-sm" data-toggle = "modal" data-target = "#testModal">
+    FIND PARTY 
+  </button>
+
+  <!-- Button trigger modal for HOST FORM -->
+  <button class = "btn btn-primary btn-sm" data-toggle = "modal" data-target = "#myModal">
+    HOST PARTY
+  </button>
+
+  <!-- Modal for MAPS AND SIDEBAR -->
+  <div class = "modal fade" id = "testModal" tabindex = "-1" role = "dialog" 
+    aria-labelledby = "myModalLabel" aria-hidden = "true">
+    
+    <div class = "modal-dialog modal-lg">
+       <div class = "modal-content">
+          
+          <div class = "modal-header">
+             <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+                   &times;
+             </button>
+             
+             <h2 class = "modal-title" id = "myModalLabel">
+                FIND IT
+             </h2>
+          </div>
+          
+          <div class = "modal-body"> 
+              <!-- Seach party input field with submit button -->
+              <div class="row search-center">
+                <input id="location-address" type="text" class="search-input" placeholder="Enter City Name">
+                <button id="map-address-btn" class="btn btn-primary btn-sm"><span>Map It</span></button>
+              </div>
+              <!-- Side Bar and Google Map -->
+              <div class="row map-row">
+                <div class="col-xs-8 col-sm-8 col-md-8 map-col">
+                  <div id="map-canvas"></div>
+                </div>
+                <div id="side-bar-data" class="col-xs-4 col-sm-4 col-md-4 side-bar">
+                  <!-- data appeneded in main.js -->
+                </div>
+              </div>
+              <!-- END of sidebar and map -->
+          </div>       
+          <div class = "modal-footer">
+             <button type = "button" class = "btn btn-primary" data-dismiss = "modal">
+                Close
+             </button>
+          </div>	        
+       </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+   
+  </div><!-- /.modal -->
+
+
+
+  <!-- Modal for HOST FORM -->
+  <div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" 
+    aria-labelledby = "myModalLabel" aria-hidden = "true">   
+    
+    <div class = "modal-dialog">
+       <div class = "modal-content">
+          
+          <div class = "modal-header">
+             <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+                   &times;
+             </button>
+             
+             <h2 class = "modal-title" id = "myModalLabel">
+                Host Form
+             </h2>
+          </div>
+          
+          <div class = "modal-body">
+             
+            <div class="form-container">
+              <form>
+                 <p>
+                     <input id="address" class="address-input form-control" name="address" type="text" placeholder="Enter Address">
+                 </p>
+                 <p>
+                     <input id="description" class="description-input form-control" name="description" type="text" placeholder="Type">
+                 </p>
+                 <p>
+                     <input id="age" class="age-input form-control" name="age" type="text" placeholder="Age restriction">
+                 </p>
+                 <p>
+                     <input id="guest-max" class="guest-input form-control" name="guest" type="text" placeholder="Max Guests">
+                 </p>
+                 <p>
+                     <input id="time" class="time-input form-control" name="time" type="text" placeholder="Start-End Time">
+                 </p>
+                 <p>
+                     <input id="email" class="email-input form-control" name="email" type="text" placeholder="Email">
+                 </p>
+                 <p>
+                     <input id="phoneNumber" class="phone-input form-control" name="phoneNumber" type="text" placeholder="Phone Number">
+                 </p>	   
+              </form>
+            </div>
+
+          </div>
+          
+          <div class = "modal-footer">
+            <button type = "button" class = "btn btn-primary" data-dismiss = "modal">
+              Close
+            </button>
+             <!-- SUBMIT and add the form data into Firebase -->
+            <!-- <input id="post-party-btn" class="btn btn-primary" type="submit"> -->
+            <button id="post-party-btn" class="btn btn-primary" type="submit">Submit</button>
+          </div>
+          
+       </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+   
+  </div><!-- /.modal -->
+
+
+
+
+
+
+
+
+
+  <!-- Google Maps API Key -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChaHixMQ88Nfqh2jefnRQIn4aqJR84B60"></script>
+  <!-- JQuery CDN -->
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+>>>>>>> 71ea4dd871f68b96d9d100c69bea98104b2f43f7
 </body>
 </html>
+
+
