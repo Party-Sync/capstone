@@ -269,3 +269,21 @@ div.col-lg-12 {
 div.col-md-6 {
     margin-bottom: 15px;
 }
+
+
+/* GOOGLE MAPS */
+#map-canvas {
+    width: 100%;
+    height: 400px;
+}
+
+#side-bar-data {
+    float: right;
+    overflow: scroll;
+    height: 400px;
+}
+.side-bar-border {
+    border-bottom: 1px solid black;
+    padding: 5px;
+    text-align: left;
+}

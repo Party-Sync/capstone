@@ -1,5 +1,5 @@
-/*
 
+<<<<<<< HEAD
 	PartySync logo color animation
 
 */
@@ -120,26 +120,12 @@ hr {
 }*/
 
 /*.how-to {
+=======
+.search-center {
+>>>>>>> 71ea4dd871f68b96d9d100c69bea98104b2f43f7
 	text-align: center;
-}*/
-
-h3.howThisWorks {
-	margin-top: 100px;
-	background-color: rgba(0, 0, 0, 0.15);
-	font-size: 24px;
 }
-
-h4 {
-	padding: 60px 10px 10px 0px;
-	font-size: 20px;
-	color: white;
-}
-
-p {
-	color: white;
-	font-size: 17px;
-	font-family: 'Poiret One';
-}
+<<<<<<< HEAD
 
 p.host {
 	margin-left: 30px;
@@ -192,3 +178,36 @@ div.col-md-4.attendParty {
 
 
 
+=======
+#map-canvas {
+	width: 100%;
+	height: 400px;
+}
+.form-container {
+padding: 50px 0 100px 100px;
+}
+.address-input, 
+.description-input,
+.age-input,
+.guest-input,
+.time-input, 
+.search-input,
+.date-input,
+.email-input,
+.phone-input {
+	width: 80%;
+}
+.info-window-text {
+	text-align: left;
+}
+#side-bar-data {
+	float: right;
+	overflow: scroll;
+	height: 400px;
+}
+.side-bar-border {
+	border-bottom: 1px solid black;
+	padding: 5px;
+	text-align: left;
+}
+>>>>>>> 71ea4dd871f68b96d9d100c69bea98104b2f43f7
