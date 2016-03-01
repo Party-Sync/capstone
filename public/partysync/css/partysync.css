@@ -28,7 +28,7 @@ p {
     font-size: 1.25em;
     line-height: 1.6;
     color: #000;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
     margin-bottom: 0px;
 }
 
@@ -296,7 +296,7 @@ div.col-md-6 {
 .email-input,
 .phone-input {
     margin: 10px 0 10px 0;
-    width: 85%;
+    width: 90%;
 }
 /* positioning the copyright to be centered */
 .move-rt-lil {
