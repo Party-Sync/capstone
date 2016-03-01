@@ -28,7 +28,7 @@ p {
     font-size: 1.25em;
     line-height: 1.6;
     color: #000;
-    /*margin-left: 50px;*/
+    margin-left: 50px;
     margin-bottom: 0px;
 }
 
@@ -94,7 +94,7 @@ hr {
     font-size: 1.25em;
     font-weight: 400;
     letter-spacing: 1px;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 
 .img-border {
@@ -104,13 +104,18 @@ hr {
 }
 
 .img-left {
-    float: none;
-    margin: 0 auto 0;
+    /*float: none;*/
+    /*margin: 0 auto 0;*/
 }
 
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
+}
+
+footer p {
+    margin: 0;
+    padding: 50px 0;
 }
 
 @media screen and (min-width:768px) {
@@ -212,15 +217,16 @@ footer {
     min-width: 170px;
     line-height: 26px;
 }
-.align-btn-text {
-    text-align: center;
-    margin: 10px 0 10px 0;
-}
+
 .btn {
     padding: 10px 20px 10px 30px;
     font-size: 2rem;
     color: white;
     font-family: 'Poiret One';
+}
+.align-button {
+    text-align: center;
+    padding: 10px 0 10px 0;
 }
 
 /*Host Party and Attend Party are hidden until user has been authenticated*/
@@ -260,11 +266,14 @@ div.col-lg-12 {
     padding-bottom: 10px;
 }
 
-/* positioning faq button to be centered (or looked centered) */
-.faq-col {
-    text-align: center;
+.center-faq {
+    padding: 10px 0 10px 0;
     position: relative;
-    right: 20px;
+    right: 15px;
+}
+.center-copyright {
+    position: relative;
+    right: 15px;
 }
 
 /*about page*/
@@ -279,7 +288,6 @@ div.col-md-6 {
     width: 100%;
     height: 400px;
 }
-/* Side bar in modal */
 #side-bar-data {
     float: right;
     overflow: scroll;
@@ -290,29 +298,22 @@ div.col-md-6 {
     padding: 5px;
     text-align: left;
 }
-
-/* HOST input feilds in modal*/
 .address-input, 
 .description-input,
 .age-input,
 .guest-input,
 .time-input, 
-.search-input,
 .date-input,
 .email-input,
 .phone-input {
-    margin: 10px 0 10px 0;
     width: 90%;
 }
-
-.move-rt-lil {
-    position: relative;
-    right: 13px;
-
-
-
 /*Social Medial Modal styling*/
-.btn-social {
+.btn-social{
     width: 175px;
     margin-bottom: 1.5rem;
+
 }
+
+
+
