@@ -223,6 +223,11 @@ footer {
     font-family: 'Poiret One';
 }
 
+/*Host Party and Attend Party are hidden until user has been authenticated*/
+.attendParty, .hostParty{
+    display: none;
+}
+
 /* PartySync logo color animation */
 
 .brand-name {
@@ -285,6 +290,7 @@ div.col-md-6 {
     padding: 5px;
     text-align: left;
 }
+
 /* HOST input feilds in modal*/
 .address-input, 
 .description-input,
@@ -298,8 +304,15 @@ div.col-md-6 {
     margin: 10px 0 10px 0;
     width: 90%;
 }
-/* positioning the copyright to be centered */
+
 .move-rt-lil {
     position: relative;
     right: 13px;
+
+
+
+/*Social Medial Modal styling*/
+.btn-social {
+    width: 175px;
+    margin-bottom: 1.5rem;
 }

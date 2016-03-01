@@ -161,9 +161,11 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
 	    console.log("Login Failed!", error);
 	  } else {
 	    console.log("Authenticated successfully with payload:", authData);
+	    $("#register").modal('hide')
+	    $('.hostParty, .attendParty').css('display', 'inherit');
+	    $('.signUp').css('display', 'none');
 	    $('.form-container').css('display', 'inherit');
 	    $('.form-container').append("<img src='"+ authData.facebook.profileImageURL + "'>");
-	    // $('.modal-dialog');  ---Need to find a way to dismiss the modal here.
 	  }
 	});
 	});
@@ -173,9 +175,12 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
 	ref.authWithOAuthPopup("twitter", function(error, authData) {
 	  if (error) {
 	    console.log("Login Failed!", error);
+
 	  } else {
 	    console.log("Authenticated successfully with payload:", authData);
-
+	    $("#register").modal('hide')
+	    $('.hostParty, .attendParty').css('display', 'inherit');
+	    $('.signUp').css('display', 'none');
 	  }
 	});
 	});
@@ -187,6 +192,9 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
 	    console.log("Login Failed!", error);
 	  } else {
 	    console.log("Authenticated successfully with payload:", authData);
+	    $("#register").modal('hide');
+	    $('.hostParty, .attendParty').css('display', 'inherit');
+	    $('.signUp').css('display', 'none');
 	  }
 	});
 	});
