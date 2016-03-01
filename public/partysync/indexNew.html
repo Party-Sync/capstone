@@ -21,7 +21,10 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Poiret+One|Shadows+Into+Light|Dancing+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css">
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -93,10 +96,15 @@
         </div>          
     </div>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                         <a class="btn btn-theme btn-sm" class="hostParty" href="#" data-toggle = "modal" data-target = "#myModal">Host a Party</a>
             </div>
-            <div class="col-lg-6">
+
+            <div class="col-lg-4">
+                <a class="btn btn-theme btn-sm" class="attendParty" href="#" data-toggle = "modal" data-target = "#register">Sign Up/Login</a>
+
+            </div>
+            <div class="col-lg-4">
                         <a class="btn btn-theme btn-sm" class="attendParty" href="#" data-toggle = "modal" data-target = "#testModal">Attend a Party</a>
             </div>
         </div>
@@ -239,6 +247,33 @@
     </div><!-- /.modal-dialog -->
    
   </div><!-- /.modal -->
+
+<!-- Register/Sign In Modal content-->
+        <div id="register" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Select Your Preferred Social Account to Continue:</h4>
+              </div>
+              <div class="modal-body">
+                    <button type-"button" class="btn-social btn-facebook btn-lg">
+                        <span class="fa fa-facebook"></span>Facebook
+                    </button>
+                    <button type-"button" class="btn-social btn-twitter btn-lg">
+                        <span class="fa fa-twitter"></span>Twitter
+                    </button>
+                    <button type-"button" class="btn-social btn-google btn-lg">
+                        <span class="fa fa-google"></span>Google
+                    </button>
+
+              <div class="modal-footer">
+              </div>
+            </div>
+    </div>
+</div>
+
+<!-- Register Modal End -->
 
 
     <!-- Google Maps API Key -->
