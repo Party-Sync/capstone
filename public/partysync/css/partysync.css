@@ -1,5 +1,4 @@
 /*!
- * Start Bootstrap - Business Casual Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
@@ -200,7 +199,7 @@ footer p {
 
 /*additional CSS added*/
 
-/*for buttons*/
+/* Custom buttons */
 
 .btn-theme {
     color: #337ab7;
@@ -218,6 +217,7 @@ footer p {
     min-width: 170px;
     line-height: 26px;
 }
+
 .btn {
     padding: 10px 20px 10px 30px;
     font-size: 2rem;
@@ -227,11 +227,8 @@ footer p {
     margin: 10px 100px 10px 178px;
 }
 
-/*
+/* PartySync logo color animation */
 
-    PartySync logo color animation
-
-*/
 .brand-name {
     -webkit-animation-direction: normal;
     -webkit-animation-duration: 10s;
@@ -266,14 +263,6 @@ div.col-lg-12 {
     margin-left: 325px;
     margin-top: 20px;
 }
-
-/*div.row.col-lg-6.attendParty {
-    margin-left: 150px;
-}
-
-div.row.col-lg-6.hostParty {
-    margin-left: 30px;
-}*/
 
 /*about page*/
 
