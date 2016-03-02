@@ -334,6 +334,19 @@ div.col-md-6 {
     /*width: 90%;*/
     margin: 10px 0 10px 0;
 }
+
+.search-input {
+    padding: 25px;
+    width: 53%;
+    position: relative;
+    left: 10%;
+    top: 32px;
+}
+#map-address-btn {
+    position: relative;
+    left: 20%;
+    bottom: 20px;
+}
 /*Social Medial Modal styling*/
 .btn-social{
     width: 175px;

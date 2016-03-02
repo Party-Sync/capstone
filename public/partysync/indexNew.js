@@ -22,45 +22,48 @@ function initialize() {
 // function to geocode an address and plot it on a map
 function codeAddress(address, description, time, space, age, search, email, phone) {
 
-        geocoder.geocode( {'address': address}, function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                        if (description != undefined) {
-                                var index = results[0].formatted_address.toLowerCase().indexOf(search.toLowerCase());
-                                if (index != -1) {
-                                        var marker = new google.maps.Marker({
-                                                map: map,
-                                                position: results[0].geometry.location
-                                        });
-                                        console.log(address);
-                                        console.log(results);
+    geocoder.geocode( {'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                    if (description != undefined) {
+                            var index = results[0].formatted_address.toLowerCase().indexOf(search.toLowerCase());
+                            if (index != -1) {
+                                    var marker = new google.maps.Marker({
+                                            map: map,
+                                            position: results[0].geometry.location
+                                    });
+                                    console.log(address);
+                                    console.log(results);
 
-                                        var infowindow = new google.maps.InfoWindow({
-                                                content: "<div class='info-window-text'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
-                                                "</p><p><strong>Age Restriction:</strong> " + age +
-                                                "</p><p><strong>Guest Limit:</strong> " + space +
-                                                "</p><p><strong>Time:</strong> "
-                                                + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
-                                                + phone + "</p>" + "<div>"
-                                        });
-                                        // Open the window using our map and marker
-                                        marker.addListener("click", function() {
-                                                infowindow.open(map, marker);
-                                        });
+                                    var infowindow = new google.maps.InfoWindow({
+                                            content: "<div class='info-window-text'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
+                                            "</p><p><strong>Age Restriction:</strong> " + age +
+                                            "</p><p><strong>Guest Limit:</strong> " + space +
+                                            "</p><p><strong>Time:</strong> "
+                                            + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
+                                            + phone + "</p>" + "<div>"
+                                    });
+                                    // Open the window using our map and marker
+                                    marker.addListener("click", function() {
+                                            infowindow.open(map, marker);
+                                    });
 
-                                        // displays only searched location parties.
-                                        $("#side-bar-data").append( "<div class='side-bar-border'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
-                                                "</p><p><strong>Age Restriction:</strong> " + age +
-                                                "</p><p><strong>Guest pmit:</strong> " + space +
-                                                "</p><p><strong>Time:</strong> " + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
-                                                + phone + "</p>" + "</div>");
-                                }
-                        } else {
-                                map.setCenter(results[0].geometry.location);
-                        }
-
-                } else {
-                        alert('Geocode was not successful for the following reason: ' + status);
-                }
+                                    // displays only searched location parties.
+                                    $("#side-bar-data").append( "<div class='side-bar-border'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
+                                            "</p><p><strong>Age Restriction:</strong> " + age +
+                                            "</p><p><strong>Guest pmit:</strong> " + space +
+                                            "</p><p><strong>Time:</strong> " + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
+                                            + phone + "</p>" + "</div>");
+                            }
+                    } else {
+                            map.setCenter(results[0].geometry.location);
+                    }
+            } else if(status === google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+	            setTimeout(function() {
+	                Geocode(address);
+	            }, 200);
+            } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+            }
         });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
