@@ -204,11 +204,14 @@ footer p {
 }
 .profileWelcome{
     float: right;
-    font-size: .5rem;
+    font-size: .75rem;
     height: 3rem;
     width: 200px;
     text-align: center;
-    padding-top: 7px;
+    padding-top: 1.5rem;
+}
+#welcomeMessage{
+    padding-top: 2rem;
 }
 
 @media screen and (min-width:1200px) {
