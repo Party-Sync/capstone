@@ -195,7 +195,7 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
             $("#register").modal('hide');
             $('.hostParty, .attendParty').css('display', 'inherit');
             $('.signUp').css('display', 'none');
-            $('ul').append("<div class='profileWelcome'><span>Welcome " + authData.google.displayName + "</span><img src='" + authData.google.profileImageURL + "' class='profilePic'></div>");
+            $('ul').append("<div class='profileWelcome'><span id='welcomeMessage'>Welcome " + authData.google.displayName + "</span><img src='" + authData.google.profileImageURL + "' class='profilePic'></div>");
           }
         });
         });
