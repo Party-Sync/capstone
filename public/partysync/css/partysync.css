@@ -318,15 +318,23 @@ div.col-md-6 {
     width: 100%;
     height: 400px;
 }
+.info-window-text {
+    font-size: 1rem;
+}
 #side-bar-data {
     float: right;
     overflow: scroll;
     height: 400px;
+    font-size: 1rem;
 }
 .side-bar-border {
-    border-bottom: 1px solid black;
+    width: 100%;
+    border-bottom: 1px solid #E0E0E0 ;
     padding: 5px;
     text-align: left;
+}
+.searched-party {
+    font-size: 1.5rem;
 }
 .address-input,
 .description-input,
@@ -338,6 +346,19 @@ div.col-md-6 {
 .phone-input {
     /*width: 90%;*/
     margin: 10px 0 10px 0;
+}
+
+.search-input {
+    padding: 25px;
+    width: 53%;
+    position: relative;
+    left: 10%;
+    top: 32px;
+}
+#map-address-btn {
+    position: relative;
+    left: 20%;
+    bottom: 20px;
 }
 /*Social Medial Modal styling*/
 .btn-social{
