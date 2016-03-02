@@ -161,7 +161,7 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
             $('.hostParty, .attendParty').css('display', 'inherit');
             $('.signUp').css('display', 'none');
             $('.form-container').css('display', 'inherit');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span>Welcome " + authData.facebook.displayName + "</span><img src='"+ authData.facebook.profileImageURL + "' class='profilePic'></div>");
+            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'> " + authData.facebook.cachedUserProfile.first_name + "</span><img src='"+ authData.facebook.profileImageURL + "' class='profilePic'></div>");
           }
         });
         });
@@ -177,7 +177,7 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
             $("#register").modal('hide')
             $('.hostParty, .attendParty').css('display', 'inherit');
             $('.signUp').css('display', 'none');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span>Welcome " + authData.twitter.displayName + "</span><img src='" + authData.twitter.profileImageURL + "' class='profilePic'></div>");
+            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'>" + authData.twitter.username + "</span><img src='" + authData.twitter.profileImageURL + "' class='profilePic'></div>");
           }
         });
         });
@@ -192,7 +192,7 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
             $("#register").modal('hide');
             $('.hostParty, .attendParty').css('display', 'inherit');
             $('.signUp').css('display', 'none');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span id='welcomeMessage'>Welcome " + authData.google.displayName + "</span><img src='" + authData.google.profileImageURL + "' class='profilePic'></div>");
+            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'>" + authData.google.cachedUserProfile.given_name + "</span><img src='" + authData.google.profileImageURL + "' class='profilePic'></div>");
           }
         });
         });
