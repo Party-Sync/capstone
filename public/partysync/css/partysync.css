@@ -214,6 +214,11 @@ footer p {
     padding-top: 2rem;
 }
 
+.displayName{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 @media screen and (min-width:1200px) {
     .box:after {
         content: '';
