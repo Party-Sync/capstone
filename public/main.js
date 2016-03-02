@@ -1,6 +1,11 @@
+console.log("yoyo");
+
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> d7ef61dd1047620729774922cfdaade2275aae5d
 	var geocoder;
 	var map;
 	
@@ -57,6 +62,8 @@
 				} else {
 					map.setCenter(results[0].geometry.location);
 				}		
+<<<<<<< HEAD
+=======
 
 			} else {
 				alert('Geocode was not successful for the following reason: ' + status);
@@ -120,6 +127,7 @@
 			// Call the codeAddress() function to place marker on input location
 			codeAddress(address);		
 			
+>>>>>>> d7ef61dd1047620729774922cfdaade2275aae5d
 =======
 var geocoder;
 var map;
@@ -187,8 +195,72 @@ function codeAddress(address, description, time, space, age, search, email, phon
 	});
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+>>>>>>> 71ea4dd871f68b96d9d100c69bea98104b2f43f7
 
+			} else {
+				alert('Geocode was not successful for the following reason: ' + status);
+			}
+		});
+	
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
 
+<<<<<<< HEAD
+
+	// FIREBASE
+	var fireDB = new Firebase("https://partysync16.firebaseio.com/");
+
+	fireDB.child("post-party").on("value", function(snapshot) {
+		console.log(snapshot.val());
+	});
+
+	$(document).ready(function() {	
+		/*
+			POST - host only
+		*/ 
+		$("#post-party-btn").click(function() {
+			event.preventDefault();
+
+			var address = $("#address").val();
+			var description = $("#description").val();
+			var age = $("#age").val();
+			var guestMax = $("#guest-max").val();
+			var time = $("#time").val();
+
+			var date = $("#date").val();
+			var email = $("#email").val();
+			var phone = $("#phoneNumber").val();
+			// Users input
+			var data = {
+				"address": address,
+				"description": description,
+				"ageRestriction": age,
+				"guestLimit": guestMax,
+				"time": time,
+				"date": date,
+				"email": email,
+				"phone": phone
+			}
+			// this will push data
+			fireDB.child("post-party").push(data);
+			console.log(data)
+			
+		});
+
+		/*
+			GET - display each party info on the map when user searches location
+		*/ 
+		$("#map-address-btn").click(function() {
+			event.preventDefault();	
+			
+
+		fireDB.child("post-party").on("value", function(snapshot) {
+			// User input address
+			var address = $("#location-address").val();	
+			// Call the codeAddress() function to place marker on input location
+			codeAddress(address);		
+			
+=======
 // FIREBASE
 var fireDB = new Firebase("https://partysync16.firebaseio.com/");
 
@@ -281,6 +353,8 @@ $(document).ready(function() {
 		});
 	});
 });
+<<<<<<< HEAD
+=======
 
 
 
@@ -324,6 +398,7 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
 	  }
 	});
 	});
+>>>>>>> d7ef61dd1047620729774922cfdaade2275aae5d
 =======
 				codeAddress(partyAddresses, partyDescription, partyTime, guestSpace, ageLimit, address, email, phone);
 				// empties previous search result

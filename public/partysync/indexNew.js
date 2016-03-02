@@ -1,5 +1,3 @@
-console.log("yoyo");
-
 "use strict";
 var geocoder;
 var map;
@@ -114,8 +112,7 @@ $(document).ready(function() {
                 // this will push data to firebase
                 fireDB.child("post-party").push(data);
                 console.log(data)
-                // alert user party has been posted
-                alert("Event has been posted");
+                $("#post-success").append("<p class='text-green'><i class='fa fa-check'></i> Your party has been posted</p>");
                 // clear the inputs when sumbit button is clicked
                 $("input").val("");
         });
