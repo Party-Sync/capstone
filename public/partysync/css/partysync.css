@@ -328,10 +328,14 @@ div.col-md-6 {
 .date-input,
 .email-input,
 .phone-input {
-    width: 90%;
+    /*width: 90%;*/
+    margin: 10px 0 10px 0;
 }
 /*Social Medial Modal styling*/
 .btn-social{
     width: 175px;
     margin-bottom: 1.5rem;
+}
+.text-green {
+    color: green;
 }
