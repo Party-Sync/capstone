@@ -2,6 +2,10 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+/*!
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -186,7 +190,25 @@ footer p {
         margin: 0 auto;
         table-layout: fixed;
         font-size: 1.25em;
+        width: 100%;
     }
+}
+
+/*Styling Profile pic appended to Navbar*/
+
+.profilePic{
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+    float: right;
+}
+.profileWelcome{
+    float: right;
+    font-size: .5rem;
+    height: 3rem;
+    width: 200px;
+    text-align: center;
+    padding-top: 7px;
 }
 
 @media screen and (min-width:1200px) {
@@ -194,6 +216,12 @@ footer p {
         content: '';
         display: table;
         clear: both;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .profileWelcome{
+        display: none;
     }
 }
 
@@ -219,21 +247,20 @@ footer p {
 }
 
 .btn {
-    padding: 10px 10px 10px 10px;
+    padding: 10px 20px 10px 30px;
     font-size: 2rem;
     color: white;
     font-family: 'Poiret One';
 }
 .align-button {
+    text-align: center;
     padding: 10px 0 10px 0;
 }
-
 
 /*Host Party and Attend Party are hidden until user has been authenticated*/
 .attendParty, .hostParty{
     display: none;
 }
-
 
 /* PartySync logo color animation */
 
@@ -293,11 +320,11 @@ div.col-md-6 {
     padding: 5px;
     text-align: left;
 }
-.address-input, 
+.address-input,
 .description-input,
 .age-input,
 .guest-input,
-.time-input, 
+.time-input,
 .date-input,
 .email-input,
 .phone-input {
@@ -308,5 +335,3 @@ div.col-md-6 {
     width: 175px;
     margin-bottom: 1.5rem;
 }
-
-

@@ -36,7 +36,7 @@
 </head>
 
 <body>
-<!-- 
+<!--
     <div class="brand">PartySync</div>
     <div class="address-bar">123 PartySync Blvd | YourPartyTown, USA | 123.456.7890</div> -->
 
@@ -93,26 +93,21 @@
                     </h2>
                 </div>
             </div>
-        </div>          
+        </div>
     </div>
-        
-
-
         <div class="row align-button">
-            <div class="col-lg-5 col-md-5 col-sm-5 text-center">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <a class="btn btn-theme btn-sm hostParty" href="#" data-toggle ="modal" data-target ="#myModal">Host a Party</a>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 text-center">
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <a class="btn btn-theme btn-sm signUp" href="#" data-toggle = "modal" data-target = "#register">Sign Up/Login</a>
+
             </div>
-            <div class="col-lg-5 col-md-5 col-sm-5 text-center">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <a class="btn btn-theme btn-sm attendParty" href="#" data-toggle = "modal" data-target = "#testModal">Attend a Party</a>
             </div>
         </div>
-        
-
-
-
         <div class="row">
             <div class="box">
                 <div class="row">
@@ -130,7 +125,7 @@
         </div>
 
                        <!--  GOES IN MODAL -->
-                       <!-- 
+                       <!--
                         <p>After signing up, listing a party and finding a party are a breeze!</p>
                         <p>Hosts:  Perhaps you had some last minute cancellations or you just want to meet new, like-minded friends.  Simply fill-out a short Host form and you'll be all set to review potential guests.</p>
                         <p>Party-goers:  Search for available parties then contact the host for invite/party address.</p> -->
@@ -147,31 +142,31 @@
 
 
   <!-- Modal for MAPS AND SIDEBAR -->
-  <div class = "modal fade" id = "testModal" tabindex = "-1" role = "dialog" 
+  <div class = "modal fade" id = "testModal" tabindex = "-1" role = "dialog"
     aria-labelledby = "myModalLabel" aria-hidden = "true">
-    
+
     <div class = "modal-dialog modal-lg">
        <div class = "modal-content">
-          
+
           <div class = "modal-header">
              <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
                    &times;
              </button>
-             
+
              <h2 class = "modal-title" id = "myModalLabel">
                 FIND IT
              </h2>
           </div>
-          
-          <div class = "modal-body"> 
-              
+
+          <div class = "modal-body">
+
 
               <!-- Seach party input field with submit button -->
               <div class="row search-center text-center">
                 <input id="location-address" type="text" class="search-input form-control text-center" placeholder="Enter City Name">
                 <button id="map-address-btn" class="btn btn-primary btn-sm"><span>Map It</span></button>
               </div>
-              
+
 
 
 
@@ -185,38 +180,38 @@
                 </div>
               </div>
               <!-- END of sidebar and map -->
-          </div>       
+          </div>
           <div class = "modal-footer">
              <button type = "button" class = "btn btn-primary" data-dismiss = "modal">
                 Close
              </button>
-          </div>            
+          </div>
        </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-   
+
   </div><!-- /.modal -->
 
 
 
   <!-- Modal for HOST FORM -->
-<div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" 
-    aria-labelledby = "myModalLabel" aria-hidden = "true">   
-    
+<div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog"
+    aria-labelledby = "myModalLabel" aria-hidden = "true">
+
     <div class = "modal-dialog">
        <div class = "modal-content">
-          
+
           <div class = "modal-header">
              <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
                    &times;
              </button>
-             
+
              <h2 class = "modal-title" id = "myModalLabel">
                 Host Form
              </h2>
           </div>
-          
+
           <div class = "modal-body">
-             
+
             <div class="form-container">
               <form>
                  <p>
@@ -239,12 +234,12 @@
                  </p>
                  <p>
                      <input id="phoneNumber" class="phone-input form-control" name="phoneNumber" type="text" placeholder="Phone Number">
-                 </p>      
+                 </p>
               </form>
             </div>
 
           </div>
-          
+
           <div class = "modal-footer">
             <button type = "button" class = "btn btn-primary" data-dismiss = "modal">
               Close
@@ -253,7 +248,7 @@
             <!-- <input id="post-party-btn" class="btn btn-primary" type="submit"> -->
             <button id="post-party-btn" class="btn btn-primary" type="submit">Submit</button>
           </div>
-          
+
        </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -308,3 +303,6 @@
 </body>
 
 </html>
+
+
+
