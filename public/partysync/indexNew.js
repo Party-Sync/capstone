@@ -19,7 +19,6 @@ function initialize() {
 		 google.maps.event.trigger(map, "resize");
 		 map.setCenter(currentCenter); 
 	});
-
 }
 
 // function to geocode an address and plot it on a map

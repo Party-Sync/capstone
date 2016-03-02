@@ -28,7 +28,7 @@ p {
     font-size: 1.25em;
     line-height: 1.6;
     color: #000;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
     margin-bottom: 0px;
 }
 
@@ -214,25 +214,26 @@ footer p {
 }
 
 .btn-min-block {
-    min-width: 170px;
-    line-height: 26px;
+    /*min-width: 170px;*/
+    /*line-height: 26px;*/
 }
 
 .btn {
-    padding: 10px 20px 10px 30px;
+    padding: 10px 10px 10px 10px;
     font-size: 2rem;
     color: white;
     font-family: 'Poiret One';
 }
 .align-button {
-    text-align: center;
     padding: 10px 0 10px 0;
 }
+
 
 /*Host Party and Attend Party are hidden until user has been authenticated*/
 .attendParty, .hostParty{
     display: none;
 }
+
 
 /* PartySync logo color animation */
 
@@ -266,14 +267,8 @@ div.col-lg-12 {
     padding-bottom: 10px;
 }
 
-.center-faq {
+.faq {
     padding: 10px 0 10px 0;
-    position: relative;
-    right: 15px;
-}
-.center-copyright {
-    position: relative;
-    right: 15px;
 }
 
 /*about page*/
@@ -312,8 +307,6 @@ div.col-md-6 {
 .btn-social{
     width: 175px;
     margin-bottom: 1.5rem;
-
 }
-
 
 
