@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 var geocoder;
 var map;
 
@@ -32,6 +30,7 @@ function codeAddress(address, description, time, space, age, search, email, phon
                             if (index != -1) {
                                 var marker = new google.maps.Marker({
                                         map: map,
+                                        animation: google.maps.Animation.DROP,
                                         position: results[0].geometry.location
                                 });
                                 console.log(address);
