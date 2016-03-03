@@ -98,19 +98,13 @@ hr {
     font-size: 1.25em;
     font-weight: 400;
     letter-spacing: 1px;
-    /*margin-left: 30px;*/
 }
 
-.img-border {
-    float: none;
-    margin: 0 auto 0;
-    border: #999999 solid 1px;
+.img-border-left {
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.img-left {
-    /*float: none;*/
-    /*margin: 0 auto 0;*/
-}
 
 footer {
     background: #fff;
@@ -269,7 +263,10 @@ footer p {
 .attendParty, .hostParty{
     display: none;
 }
-
+.signUp {
+    position: relative;
+    right: 10px;
+}
 /* PartySync logo color animation */
 
 .brand-name {
@@ -344,16 +341,17 @@ div.col-md-6 {
 .date-input,
 .email-input,
 .phone-input {
-    /*width: 90%;*/
     margin: 10px 0 10px 0;
 }
-
 .search-input {
     padding: 25px;
     width: 53%;
     position: relative;
     left: 10%;
     top: 32px;
+}
+.text-green {
+    color: green;
 }
 #map-address-btn {
     position: relative;
@@ -365,6 +363,19 @@ div.col-md-6 {
     width: 175px;
     margin-bottom: 1.5rem;
 }
-.text-green {
-    color: green;
+/* ABOUT page */
+.round-img {
+    width: 300px;
+    height: 270px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
+.foot-row {
+    padding: 25px 0 25px 0;
+}
+.text-white {
+    color: white;
+}
+
+
