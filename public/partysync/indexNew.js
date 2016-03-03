@@ -30,32 +30,32 @@ function codeAddress(address, description, time, space, age, search, email, phon
                     if (description != undefined) {
                             var index = results[0].formatted_address.toLowerCase().indexOf(search.toLowerCase());
                             if (index != -1) {
-                                    var marker = new google.maps.Marker({
-                                            map: map,
-                                            position: results[0].geometry.location
-                                    });
-                                    console.log(address);
-                                    console.log(results);
-                                    console.log(search);
+                                var marker = new google.maps.Marker({
+                                        map: map,
+                                        position: results[0].geometry.location
+                                });
+                                console.log(address);
+                                console.log(results);
+                                console.log(search);
 
-                                    var infowindow = new google.maps.InfoWindow({
-                                            content: "<div class='info-window-text'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
-                                            "</p><p><strong>Age Restriction:</strong> " + age +
-                                            "</p><p><strong>Guest Limit:</strong> " + space +
-                                            "</p><p><strong>Time:</strong> "
-                                            + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
-                                            + phone + "</p>" + "<div>"
-                                    });
-                                    // Open the window using our map and marker
-                                    marker.addListener("click", function() {
-                                            infowindow.open(map, marker);
-                                    });
-                                    // displays only searched location parties.
-                                    $("#side-bar-data").append("<div class='side-bar-border'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
-                                            "</p><p><strong>Age Restriction:</strong> " + age +
-                                            "</p><p><strong>Guest pmit:</strong> " + space +
-                                            "</p><p><strong>Time:</strong> " + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
-                                            + phone + "</p>" + "</div>");
+                                var infowindow = new google.maps.InfoWindow({
+                                        content: "<div class='info-window-text'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
+                                        "</p><p><strong>Age Restriction:</strong> " + age +
+                                        "</p><p><strong>Guest Limit:</strong> " + space +
+                                        "</p><p><strong>Time:</strong> "
+                                        + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
+                                        + phone + "</p>" + "<div>"
+                                });
+                                // Open the window using our map and marker
+                                marker.addListener("click", function() {
+                                        infowindow.open(map, marker);
+                                });
+                                // displays only searched location parties.
+                                $("#side-bar-data").append("<div class='side-bar-border'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
+                                        "</p><p><strong>Age Restriction:</strong> " + age +
+                                        "</p><p><strong>Guest pmit:</strong> " + space +
+                                        "</p><p><strong>Time:</strong> " + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
+                                        + phone + "</p>" + "</div>");
                             }
                     } else {
                             map.setCenter(results[0].geometry.location);
@@ -129,10 +129,10 @@ $(document).ready(function() {
         $("#map-address-btn").click(function() {
         event.preventDefault();
             fireDB.child("post-party").on("value", function(snapshot) {
-                    // User input address
-                    var address = $("#location-address").val();
-                    // Call the codeAddress() function to place marker on input location
-                    codeAddress(address);
+                // User input address
+                var address = $("#location-address").val();
+                // Call the codeAddress() function to place marker on input location
+                codeAddress(address);
                 // Get the address from firebase and mark them on the map
                 snapshot.forEach(function(data) {
                         // console.log(data.val().address);
