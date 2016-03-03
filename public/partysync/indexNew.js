@@ -149,19 +149,17 @@ $(document).ready(function() {
             });
         });
 // Social Account User Authentication
-
 function logInUser(image, name){
 
-            $("#register").modal('hide')
-            $('.hostParty, .attendParty').css('display', 'inherit');
-            $('.signUp').css('display', 'none');
-            $('.form-container').css('display', 'inherit');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'> " + name + "</span><img src='"+ image + "' class='profilePic'></div>");
+    $("#register").modal('hide')
+    $('.hostParty, .attendParty').css('display', 'inherit');
+    $('.signUp').css('display', 'none');
+    $('.form-container').css('display', 'inherit');
+    $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'> " + name + "</span><img src='"+ image + "' class='profilePic'></div>");
 
 }
 
 var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com");
-
 
         $('.btn-facebook').click(function(){
         var ref = new Firebase("https://partysync2.firebaseio.com");
@@ -171,7 +169,6 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com");
           } else {
             console.log("Authenticated successfully with payload:", authData);
             logInUser(authData.facebook.profileImageURL, authData.facebook.cachedUserProfile.first_name);
-            
           }
         });
         });
@@ -185,7 +182,6 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com");
           } else {
             console.log("Authenticated successfully with payload:", authData);
             logInUser(authData.twitter.profileImageURL, authData.twitter.displayName)
-            
           }
         });
         });
@@ -215,4 +211,3 @@ var ref = new Firebase("https://partysync2.firebaseio.com");
 ref.onAuth(authDataCallback);
 
 }); // END OF $(document).ready().
-

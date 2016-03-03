@@ -150,8 +150,8 @@ p.attend {
 }
 
 div.col-md-6 {
+	margin-top: 200px;
 	font-family: 'Poiret One';
-	margin-top: 50px;
 }
 
 div.col-md-6.attendParty {
@@ -165,17 +165,11 @@ div.col-md-6.attendParty {
 	font-family: 'Poiret One';
 }
 
-.hostParty {
-	margin-left: 50px;
-}
-
 .footer {
 	padding: 50px;
 	position: relative;
 	top: 50px;
-	
 }
-
 
 
 

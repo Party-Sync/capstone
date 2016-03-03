@@ -7,6 +7,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('../img/bg.jpg') no-repeat center center fixed;
@@ -105,6 +106,10 @@ hr {
     margin-right: auto;
 }
 
+.img-left {
+    /*float: none;*/
+    /*margin: 0 auto 0;*/
+}
 
 footer {
     background: #fff;
@@ -200,8 +205,13 @@ footer p {
     float: right;
     font-size: .75rem;
     height: 3rem;
+    width: 200px;
     text-align: center;
     padding-top: 1.5rem;
+}
+
+#welcomeMessage{
+    padding-top: 2rem;
 }
 
 .displayName{
@@ -259,6 +269,11 @@ footer p {
 .attendParty, .hostParty{
     display: none;
 }
+
+/*Host Party and Attend Party are hidden until user has been authenticated*/
+.attendParty, .hostParty{
+    display: none;
+}
 .signUp {
     position: relative;
     right: 10px;
@@ -297,6 +312,13 @@ div.col-lg-12 {
 
 .faq {
     padding: 10px 0 10px 0;
+}
+
+.collapse {
+    margin-left: 250px;
+    margin-right: 250px;
+    font-size: 1.25em;
+    line-height: 1.6;
 }
 
 /*about page*/
@@ -339,6 +361,7 @@ div.col-md-6 {
 .phone-input {
     margin: 10px 0 10px 0;
 }
+
 .search-input {
     padding: 25px;
     width: 53%;
@@ -346,9 +369,11 @@ div.col-md-6 {
     left: 10%;
     top: 32px;
 }
+
 .text-green {
     color: green;
 }
+
 #map-address-btn {
     position: relative;
     left: 20%;
@@ -359,6 +384,7 @@ div.col-md-6 {
     width: 175px;
     margin-bottom: 1.5rem;
 }
+
 /* ABOUT page */
 .round-img {
     width: 300px;
@@ -373,5 +399,3 @@ div.col-md-6 {
 .text-white {
     color: white;
 }
-
-
