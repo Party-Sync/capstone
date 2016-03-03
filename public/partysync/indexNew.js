@@ -1,7 +1,4 @@
 "use strict";
-
-
-
 var geocoder;
 var map;
 
