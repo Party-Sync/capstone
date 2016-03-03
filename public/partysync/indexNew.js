@@ -61,7 +61,7 @@ function codeAddress(address, description, time, space, age, search, email, phon
                     }
             } else if(status === google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
 	            setTimeout(function() {
-	                geocode(address);
+                    console.log("ERROR: OVER QUERY LIMIT");
 	            }, 200);
             } else {
                     alert('Geocode was not successful for the following reason: ' + status);
@@ -89,6 +89,15 @@ fireDB.child("post-party").on("value", function(snapshot) {
 });
 
 $(document).ready(function() {
+        
+        // $(".empty-input").change(function() {
+        //     if($(this).val() === "") {
+        //         $(this).css("border", "1px solid red");
+        //     } else {
+        //         $(this).css("border", "1px solid green");
+        //     }
+        // });
+
         /*
                 POST - host only
         */
@@ -114,29 +123,15 @@ $(document).ready(function() {
                 }
 
                 // IF Host doesnt not fill out form/leaves blank, display red border ELSE display green borders, success msg, and post into fb
-                if(address === "") {
-                    $("#address").css("border", "1px solid red");
-                } else if(description === "") {
-                    $("#description").css("border", "1px solid red");
-                } else if(age === "") {
-                    $("#age").css("border", "1px solid red");
-                } else if(guestMax === "") {
-                    $("#guest-max").css("border", "1px solid red");
-                } else if(time === "") {
-                    $("#time").css("border", "1px solid red");
-                } else if(email === "") {
-                    $("#email").css("border", "1px solid red");
-                } else if(phone === "") {
-                    $("#phoneNumber").css("border", "1px solid red");
-                } else {
-                    $("#address, #description, #age, #guest-max, #time, #email, #phoneNumber").css("border", "1px solid green");
+                
                     // this will push data to firebase
                     fireDB.child("post-party").push(data);
                     console.log(data)
                     $("#post-success").append("<p class='text-green'><i class='fa fa-check'></i> Your party has been posted</p>");
                     // clear the inputs when sumbit button is clicked
                     $("input").val("");   
-                }
+           
+
         });
         /*
                 GET - display each party info on the map when user searches location

@@ -299,6 +299,13 @@ div.col-lg-12 {
     padding: 10px 0 10px 0;
 }
 
+.collapse {
+    margin-left: 250px;
+    margin-right: 250px;
+    font-size: 1.25em;
+    line-height: 1.6;
+}
+
 /*about page*/
 
 div.col-md-6 {
