@@ -21,17 +21,12 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Poiret+One|Shadows+Into+Light|Dancing+Script' rel='stylesheet' type='text/css'>
-    
-    <!--FAVICON-->
-
-    <link rel="icon" type="image/png" href="././img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="././img/favicon-16x16.png" sizes="16x16">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css">
+    <!-- check icon for success on user post -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,7 +38,7 @@
 </head>
 
 <body>
-<!-- 
+<!--
     <div class="brand">PartySync</div>
     <div class="address-bar">123 PartySync Blvd | YourPartyTown, USA | 123.456.7890</div> -->
 
@@ -100,24 +95,24 @@
                     </h2>
                 </div>
             </div>
-        </div>          
+        </div>
     </div>
-        <div class="row align-btn-text">
-            <div class="col-lg-4">
-                <a class="btn btn-theme btn-sm" class="hostParty" href="#" data-toggle = "modal" data-target = "#myModal">Host a Party</a>
+        <div class="row align-button">
+            <div class="col-lg-5 col-md-5 col-sm-5">
+                <a class="btn btn-theme btn-sm hostParty" href="#" data-toggle ="modal" data-target ="#myModal">Host a Party</a>
             </div>
 
-            <div class="col-lg-4">
-                <a class="btn btn-theme btn-sm" class="signUp" href="#" data-toggle = "modal" data-target = "#register">Sign Up/Login</a>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <a class="btn btn-theme btn-sm signUp" href="#" data-toggle = "modal" data-target = "#register">Sign Up/Login</a>
 
             </div>
-            <div class="col-lg-4">
-                <a class="btn btn-theme btn-sm" class="attendParty" href="#" data-toggle = "modal" data-target = "#testModal">Attend a Party</a>
+            <div class="col-lg-5 col-md-5 col-sm-5">
+                <a class="btn btn-theme btn-sm attendParty" href="#" data-toggle = "modal" data-target = "#testModal">Attend a Party</a>
             </div>
         </div>
         <div class="row">
             <div class="box">
-                <div class="col-lg-12">
+                <div class="row">
                     <hr>
                     <h2 class="intro-text text-center">Making new friends
                         <strong> one party at a time.</strong>
@@ -125,14 +120,32 @@
                     <hr>
                         <p class="text-center">We've all been there, new to town or plans fell through with nothing to do <br> That's were PartySync comes to the rescue!</p>
                 </div>
-                <div class="col-lg-12 faq-col">
-                    <p><a class="btn btn-theme btn-sm faq" href="#">How this works? - FAQs</a></p>
+                <div class="row text-center faq">
+                    <p><a class="btn btn-theme btn-sm" role="button" data-toggle="collapse" href="#collapseFaqs" aria-expanded="false" aria-controls="collapseFaqs">How this works? - FAQs</a></p>
                 </div>
+                    <div class="collapse" id="collapseFaqs">
+                        <div class="well">
+                            <ol>
+                                <li>Why Host?</li>
+                                <ul>
+                                    <li>You have extra room or want to meet new, like-minded peeps!</li>
+                                </ul>
+                                <li>How to find Parties?</li>
+                                 <ul>
+                                    <li>Easy!  Just sign-up and search :)</li>
+                                </ul>
+                                <li>More questions?  </li>
+                                <ul>
+                                    <li>Send an email to:  hello@partysync.com</li>
+                                </ul>
+                            </ol>
+                        </div>
+                    </div>
             </div>
         </div>
 
                        <!--  GOES IN MODAL -->
-                       <!-- 
+                       <!--
                         <p>After signing up, listing a party and finding a party are a breeze!</p>
                         <p>Hosts:  Perhaps you had some last minute cancellations or you just want to meet new, like-minded friends.  Simply fill-out a short Host form and you'll be all set to review potential guests.</p>
                         <p>Party-goers:  Search for available parties then contact the host for invite/party address.</p> -->
@@ -140,7 +153,7 @@
 
         <div class="row">
             <div class="box">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12 text-center center-copyright">
                     <p>Copyright &copy; PartySync 2016</p>
                 </div>
             </div>
@@ -149,28 +162,29 @@
 
 
   <!-- Modal for MAPS AND SIDEBAR -->
-  <div class = "modal fade" id = "testModal" tabindex = "-1" role = "dialog" 
+  <div class = "modal fade" id = "testModal" tabindex = "-1" role = "dialog"
     aria-labelledby = "myModalLabel" aria-hidden = "true">
-    
+
     <div class = "modal-dialog modal-lg">
        <div class = "modal-content">
-          
-          <div class = "modal-header">
+
+          <div class = "modal-header hostModal">
              <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
                    &times;
              </button>
-             
+
              <h2 class = "modal-title" id = "myModalLabel">
                 FIND IT
              </h2>
           </div>
-          
-          <div class = "modal-body"> 
+
+          <div class = "modal-body">
               <!-- Seach party input field with submit button -->
-              <div class="row search-center">
-                <input id="location-address" type="text" class="search-input" placeholder="Enter City Name">
+              <div class="row search-center text-center">
+                <input id="location-address" type="text" class="search-input form-control text-center" placeholder="Enter City Name">
                 <button id="map-address-btn" class="btn btn-primary btn-sm"><span>Map It</span></button>
               </div>
+
               <!-- Side Bar and Google Map -->
               <div class="row map-row">
                 <div class="col-xs-8 col-sm-8 col-md-8 map-col">
@@ -181,38 +195,38 @@
                 </div>
               </div>
               <!-- END of sidebar and map -->
-          </div>       
+          </div>
           <div class = "modal-footer">
              <button type = "button" class = "btn btn-primary" data-dismiss = "modal">
                 Close
              </button>
-          </div>            
+          </div>
        </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-   
+
   </div><!-- /.modal -->
 
 
 
   <!-- Modal for HOST FORM -->
-  <div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" 
-    aria-labelledby = "myModalLabel" aria-hidden = "true">   
-    
+<div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog"
+    aria-labelledby = "myModalLabel" aria-hidden = "true">
+
     <div class = "modal-dialog">
        <div class = "modal-content">
-          
+
           <div class = "modal-header">
              <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
                    &times;
              </button>
-             
+
              <h2 class = "modal-title" id = "myModalLabel">
                 Host Form
              </h2>
           </div>
-          
+
           <div class = "modal-body">
-             
+
             <div class="form-container">
               <form>
                  <p>
@@ -231,16 +245,19 @@
                      <input id="time" class="time-input form-control" name="time" type="text" placeholder="Start-End Time">
                  </p>
                  <p>
-                     <input id="email" class="email-input form-control" name="email" type="text" placeholder="Email">
+                     <input id="email" class="email-input form-control" name="email" type="email" placeholder="Email" required>
                  </p>
                  <p>
                      <input id="phoneNumber" class="phone-input form-control" name="phoneNumber" type="text" placeholder="Phone Number">
-                 </p>      
+                 </p>
+                 <div id="post-success">
+                    <!-- Append success of user party post here -->
+                 </div>  
               </form>
             </div>
 
           </div>
-          
+
           <div class = "modal-footer">
             <button type = "button" class = "btn btn-primary" data-dismiss = "modal">
               Close
@@ -249,52 +266,60 @@
             <!-- <input id="post-party-btn" class="btn btn-primary" type="submit"> -->
             <button id="post-party-btn" class="btn btn-primary" type="submit">Submit</button>
           </div>
-          
+
        </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-   
-  </div><!-- /.modal -->
+</div><!-- /.modal -->
 
 <!-- Register/Sign In Modal content-->
-        <div id="register" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
+<div id="register" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Select Your Preferred Social Account to Continue:</h4>
-              </div>
-              <div class="modal-body">
-                    <button type-"button" class="btn-social btn-facebook btn-lg">
-                        <span class="fa fa-facebook"></span>Facebook
-                    </button>
-                    <button type-"button" class="btn-social btn-twitter btn-lg">
-                        <span class="fa fa-twitter"></span>Twitter
-                    </button>
-                    <button type-"button" class="btn-social btn-google btn-lg">
-                        <span class="fa fa-google"></span>Google
-                    </button>
-
-              <div class="modal-footer">
-              </div>
+                <h4 class="modal-title">Select Your Preferred Social Media Account to Continue:</h4>
             </div>
+              <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-4 col-lg-4">
+                        <button type-"button" class="btn-social btn-facebook btn-lg">
+                            <span class="fa fa-facebook"></span>Facebook
+                        </button>
+                    </div>
+                    <div class="col-sm-4 col-lg-4">
+                        <button type-"button" class="btn-social btn-twitter btn-lg">
+                            <span class="fa fa-twitter"></span>Twitter
+                        </button>
+                    </div>
+                    <div class="col-sm-4 col-lg-4">
+                        <button type-"button" class="btn-social btn-google btn-lg">
+                            <span class="fa fa-google"></span>Google
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
 <!-- Register Modal End -->
 
 
-    <!-- Google Maps API Key -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChaHixMQ88Nfqh2jefnRQIn4aqJR84B60">
-    </script>
+<!-- Google Maps API Key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChaHixMQ88Nfqh2jefnRQIn4aqJR84B60">
+</script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="indexNew.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="indexNew.js"></script>
 
 
 </body>
 
 </html>
+
+
