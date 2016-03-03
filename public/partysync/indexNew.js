@@ -100,7 +100,6 @@ $(document).ready(function() {
                 var age = $("#age").val();
                 var guestMax = $("#guest-max").val();
                 var time = $("#time").val();
-                // var date = $("#date").val();
                 var email = $("#email").val();
                 var phone = $("#phoneNumber").val();
                 // Users input
@@ -110,18 +109,35 @@ $(document).ready(function() {
                         "ageRestriction": age,
                         "guestLimit": guestMax,
                         "time": time,
-                        // "date": date,
                         "email": email,
                         "phone": phone
                 }
-                // this will push data to firebase
-                fireDB.child("post-party").push(data);
-                console.log(data)
-                $("#post-success").append("<p class='text-green'><i class='fa fa-check'></i> Your party has been posted</p>");
-                // clear the inputs when sumbit button is clicked
-                $("input").val("");
-        });
 
+                // IF Host doesnt not fill out form properly display red border ELSE display green borders, success msg, and post into fb
+                if(address === "") {
+                    $("#address").css("border", "1px solid red");
+                } else if(description === "") {
+                    $("#description").css("border", "1px solid red");
+                } else if(age === "") {
+                    $("#age").css("border", "1px solid red");
+                } else if(guestMax === "") {
+                    $("#guest-max").css("border", "1px solid red");
+                } else if(time === "") {
+                    $("#time").css("border", "1px solid red");
+                } else if(email === "") {
+                    $("#email").css("border", "1px solid red");
+                } else if(phone === "") {
+                    $("#phone").css("border", "1px solid red");
+                } else {
+                    $("#address, #description, #age, #guest-max, #time, #email, #phoneNumber").css("border", "1px solid green");
+                    // this will push data to firebase
+                    fireDB.child("post-party").push(data);
+                    console.log(data)
+                    $("#post-success").append("<p class='text-green'><i class='fa fa-check'></i> Your party has been posted</p>");
+                    // clear the inputs when sumbit button is clicked
+                    $("input").val("");   
+                }                
+        });
         /*
                 GET - display each party info on the map when user searches location
         */
