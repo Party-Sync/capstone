@@ -1,4 +1,7 @@
 "use strict";
+
+
+
 var geocoder;
 var map;
 
@@ -150,7 +153,18 @@ $(document).ready(function() {
         });
 // Social Account User Authentication
 
-var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
+function logInUser(image, name){
+
+            $("#register").modal('hide')
+            $('.hostParty, .attendParty').css('display', 'inherit');
+            $('.signUp').css('display', 'none');
+            $('.form-container').css('display', 'inherit');
+            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'> " + name + "</span><img src='"+ image + "' class='profilePic'></div>");
+
+}
+
+var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com");
+
 
         $('.btn-facebook').click(function(){
         var ref = new Firebase("https://partysync2.firebaseio.com");
@@ -159,11 +173,8 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
             console.log("Login Failed!", error);
           } else {
             console.log("Authenticated successfully with payload:", authData);
-            $("#register").modal('hide')
-            $('.hostParty, .attendParty').css('display', 'inherit');
-            $('.signUp').css('display', 'none');
-            $('.form-container').css('display', 'inherit');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'> " + authData.facebook.cachedUserProfile.first_name + "</span><img src='"+ authData.facebook.profileImageURL + "' class='profilePic'></div>");
+            logInUser(authData.facebook.profileImageURL, authData.facebook.cachedUserProfile.first_name);
+            
           }
         });
         });
@@ -176,10 +187,8 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
 
           } else {
             console.log("Authenticated successfully with payload:", authData);
-            $("#register").modal('hide')
-            $('.hostParty, .attendParty').css('display', 'inherit');
-            $('.signUp').css('display', 'none');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'>" + authData.twitter.username + "</span><img src='" + authData.twitter.profileImageURL + "' class='profilePic'></div>");
+            logInUser(authData.twitter.profileImageURL, authData.twitter.displayName)
+            
           }
         });
         });
@@ -191,13 +200,22 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
             console.log("Login Failed!", error);
           } else {
             console.log("Authenticated successfully with payload:", authData);
-            $("#register").modal('hide');
-            $('.hostParty, .attendParty').css('display', 'inherit');
-            $('.signUp').css('display', 'none');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'>" + authData.google.cachedUserProfile.given_name + "</span><img src='" + authData.google.profileImageURL + "' class='profilePic'></div>");
+            logInUser(authData.google.profileImageURL, authData.google.cachedUserProfile.given_name);
           }
         });
-        });
+  });
+
+// Create a callback which logs the current auth state
+function authDataCallback(authData) {
+  if (authData) {
+    console.log("User " + authData.uid + " is logged in with " + authData.provider);
+  } else {
+    console.log("User is logged out");
+  }
+}
+// Register the callback to be fired every time auth state changes
+var ref = new Firebase("https://partysync2.firebaseio.com");
+ref.onAuth(authDataCallback);
 
 }); // END OF $(document).ready().
 
