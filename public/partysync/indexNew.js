@@ -113,7 +113,7 @@ $(document).ready(function() {
                         "phone": phone
                 }
 
-                // IF Host doesnt not fill out form properly display red border ELSE display green borders, success msg, and post into fb
+                // IF Host doesnt not fill out form/leaves blank, display red border ELSE display green borders, success msg, and post into fb
                 if(address === "") {
                     $("#address").css("border", "1px solid red");
                 } else if(description === "") {
@@ -127,7 +127,7 @@ $(document).ready(function() {
                 } else if(email === "") {
                     $("#email").css("border", "1px solid red");
                 } else if(phone === "") {
-                    $("#phone").css("border", "1px solid red");
+                    $("#phoneNumber").css("border", "1px solid red");
                 } else {
                     $("#address, #description, #age, #guest-max, #time, #email, #phoneNumber").css("border", "1px solid green");
                     // this will push data to firebase
@@ -136,7 +136,7 @@ $(document).ready(function() {
                     $("#post-success").append("<p class='text-green'><i class='fa fa-check'></i> Your party has been posted</p>");
                     // clear the inputs when sumbit button is clicked
                     $("input").val("");   
-                }                
+                }
         });
         /*
                 GET - display each party info on the map when user searches location
