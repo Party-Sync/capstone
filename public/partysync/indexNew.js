@@ -169,7 +169,7 @@ function logInUser(image, name){
             $('.hostParty, .attendParty').css('display', 'inherit');
             $('.signUp').css('display', 'none');
             $('.form-container').css('display', 'inherit');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'> " + name + "</span><img src='"+ image + "' class='profilePic'></div>");
+            $('.nav').append("<div class='profileWelcome'><span class='displayName'> " + name + "</span><img src='"+ image + "' class='profilePic'></div>");
 
 }
 
