@@ -1,4 +1,5 @@
 "use strict";
+
 var geocoder;
 var map;
 
@@ -27,39 +28,40 @@ function codeAddress(address, description, time, space, age, search, email, phon
                     if (description != undefined) {
                             var index = results[0].formatted_address.toLowerCase().indexOf(search.toLowerCase());
                             if (index != -1) {
-                                    var marker = new google.maps.Marker({
-                                            map: map,
-                                            position: results[0].geometry.location
-                                    });
-                                    console.log(address);
-                                    console.log(results);
-                                    console.log(search);
+                                var marker = new google.maps.Marker({
+                                        map: map,
+                                        animation: google.maps.Animation.DROP,
+                                        position: results[0].geometry.location
+                                });
+                                console.log(address);
+                                console.log(results);
+                                console.log(search);
 
-                                    var infowindow = new google.maps.InfoWindow({
-                                            content: "<div class='info-window-text'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
-                                            "</p><p><strong>Age Restriction:</strong> " + age +
-                                            "</p><p><strong>Guest Limit:</strong> " + space +
-                                            "</p><p><strong>Time:</strong> "
-                                            + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
-                                            + phone + "</p>" + "<div>"
-                                    });
-                                    // Open the window using our map and marker
-                                    marker.addListener("click", function() {
-                                            infowindow.open(map, marker);
-                                    });
-                                    // displays only searched location parties.
-                                    $("#side-bar-data").append("<div class='side-bar-border'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
-                                            "</p><p><strong>Age Restriction:</strong> " + age +
-                                            "</p><p><strong>Guest pmit:</strong> " + space +
-                                            "</p><p><strong>Time:</strong> " + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
-                                            + phone + "</p>" + "</div>");
+                                var infowindow = new google.maps.InfoWindow({
+                                        content: "<div class='info-window-text'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
+                                        "</p><p><strong>Age Restriction:</strong> " + age +
+                                        "</p><p><strong>Guest Limit:</strong> " + space +
+                                        "</p><p><strong>Time:</strong> "
+                                        + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
+                                        + phone + "</p>" + "<div>"
+                                });
+                                // Open the window using our map and marker
+                                marker.addListener("click", function() {
+                                        infowindow.open(map, marker);
+                                });
+                                // displays only searched location parties.
+                                $("#side-bar-data").append("<div class='side-bar-border'>" + "<h4 style='text-decoration:underline;'>Party Info:</h4>" + "<p><strong>Party description:</strong> " + description +
+                                        "</p><p><strong>Age Restriction:</strong> " + age +
+                                        "</p><p><strong>Guest pmit:</strong> " + space +
+                                        "</p><p><strong>Time:</strong> " + time + "</p>" + "<h4 style='text-decoration:underline;'>Contact Host:</h4>" + "<p><strong>Email:</strong> " + email + "</p><p><strong>Phone Number:</strong> "
+                                        + phone + "</p>" + "</div>");
                             }
                     } else {
                             map.setCenter(results[0].geometry.location);
                     }
             } else if(status === google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
 	            setTimeout(function() {
-	                geocode(address);
+                    console.log("ERROR: OVER QUERY LIMIT");
 	            }, 200);
             } else {
                     alert('Geocode was not successful for the following reason: ' + status);
@@ -87,6 +89,15 @@ fireDB.child("post-party").on("value", function(snapshot) {
 });
 
 $(document).ready(function() {
+        
+        // $(".empty-input").change(function() {
+        //     if($(this).val() === "") {
+        //         $(this).css("border", "1px solid red");
+        //     } else {
+        //         $(this).css("border", "1px solid green");
+        //     }
+        // });
+
         /*
                 POST - host only
         */
@@ -98,7 +109,6 @@ $(document).ready(function() {
                 var age = $("#age").val();
                 var guestMax = $("#guest-max").val();
                 var time = $("#time").val();
-                // var date = $("#date").val();
                 var email = $("#email").val();
                 var phone = $("#phoneNumber").val();
                 // Users input
@@ -108,28 +118,31 @@ $(document).ready(function() {
                         "ageRestriction": age,
                         "guestLimit": guestMax,
                         "time": time,
-                        // "date": date,
                         "email": email,
                         "phone": phone
                 }
-                // this will push data to firebase
-                fireDB.child("post-party").push(data);
-                console.log(data)
-                $("#post-success").append("<p class='text-green'><i class='fa fa-check'></i> Your party has been posted</p>");
-                // clear the inputs when sumbit button is clicked
-                $("input").val("");
-        });
 
+                // IF Host doesnt not fill out form/leaves blank, display red border ELSE display green borders, success msg, and post into fb
+                
+                    // this will push data to firebase
+                    fireDB.child("post-party").push(data);
+                    console.log(data)
+                    $("#post-success").append("<p class='text-green'><i class='fa fa-check'></i> Your party has been posted</p>");
+                    // clear the inputs when sumbit button is clicked
+                    $("input").val("");   
+           
+
+        });
         /*
                 GET - display each party info on the map when user searches location
         */
         $("#map-address-btn").click(function() {
         event.preventDefault();
             fireDB.child("post-party").on("value", function(snapshot) {
-                    // User input address
-                    var address = $("#location-address").val();
-                    // Call the codeAddress() function to place marker on input location
-                    codeAddress(address);
+                // User input address
+                var address = $("#location-address").val();
+                // Call the codeAddress() function to place marker on input location
+                codeAddress(address);
                 // Get the address from firebase and mark them on the map
                 snapshot.forEach(function(data) {
                         // console.log(data.val().address);
@@ -150,7 +163,18 @@ $(document).ready(function() {
         });
 // Social Account User Authentication
 
-var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
+function logInUser(image, name){
+
+            $("#register").modal('hide')
+            $('.hostParty, .attendParty').css('display', 'inherit');
+            $('.signUp').css('display', 'none');
+            $('.form-container').css('display', 'inherit');
+            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'> " + name + "</span><img src='"+ image + "' class='profilePic'></div>");
+
+}
+
+var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com");
+
 
         $('.btn-facebook').click(function(){
         var ref = new Firebase("https://partysync2.firebaseio.com");
@@ -159,11 +183,8 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
             console.log("Login Failed!", error);
           } else {
             console.log("Authenticated successfully with payload:", authData);
-            $("#register").modal('hide')
-            $('.hostParty, .attendParty').css('display', 'inherit');
-            $('.signUp').css('display', 'none');
-            $('.form-container').css('display', 'inherit');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'> " + authData.facebook.cachedUserProfile.first_name + "</span><img src='"+ authData.facebook.profileImageURL + "' class='profilePic'></div>");
+            logInUser(authData.facebook.profileImageURL, authData.facebook.cachedUserProfile.first_name);
+            
           }
         });
         });
@@ -176,10 +197,8 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
 
           } else {
             console.log("Authenticated successfully with payload:", authData);
-            $("#register").modal('hide')
-            $('.hostParty, .attendParty').css('display', 'inherit');
-            $('.signUp').css('display', 'none');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'>" + authData.twitter.username + "</span><img src='" + authData.twitter.profileImageURL + "' class='profilePic'></div>");
+            logInUser(authData.twitter.profileImageURL, authData.twitter.displayName)
+            
           }
         });
         });
@@ -191,14 +210,21 @@ var myFirebaseRef = new Firebase("https://partysync2.firebaseio.com/");
             console.log("Login Failed!", error);
           } else {
             console.log("Authenticated successfully with payload:", authData);
-            $("#register").modal('hide');
-            $('.hostParty, .attendParty').css('display', 'inherit');
-            $('.signUp').css('display', 'none');
-            $('ul, .modal-title').append("<div class='profileWelcome'><span class='displayName'>" + authData.google.cachedUserProfile.given_name + "</span><img src='" + authData.google.profileImageURL + "' class='profilePic'></div>");
+            logInUser(authData.google.profileImageURL, authData.google.cachedUserProfile.given_name);
           }
         });
-        });
-        // 
-        
+  });
+
+// Create a callback which logs the current auth state
+function authDataCallback(authData) {
+  if (authData) {
+    console.log("User " + authData.uid + " is logged in with " + authData.provider);
+  } else {
+    console.log("User is logged out");
+  }
+}
+// Register the callback to be fired every time auth state changes
+var ref = new Firebase("https://partysync2.firebaseio.com");
+ref.onAuth(authDataCallback);
 
 }); // END OF $(document).ready().
