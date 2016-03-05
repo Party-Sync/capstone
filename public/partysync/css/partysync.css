@@ -1,5 +1,10 @@
+/*!
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+ 
 body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: url('../img/bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -14,7 +19,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -25,11 +30,12 @@ p {
     color: #000;
     margin-bottom: 0px;
 }
-
+/*changed line-height/added font-size March 4*/
 p.about {
     margin-top: 10px;
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 1.15;
+    font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1;
+    font-size: 20px;
 }
 
 hr {
@@ -80,7 +86,7 @@ hr {
 
 .box {
     background: #fff;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .intro-text {
@@ -89,16 +95,16 @@ hr {
     font-weight: 400;
     letter-spacing: 1px;
 }
-
+/*new March 4*/
 .img-border-left {
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
 }
-
 
 footer {
     background: #fff;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 footer p {
@@ -112,62 +118,54 @@ footer p {
         margin: 0;
         padding: 30px 0 10px;
         text-align: center;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 6em;
         font-weight: 700;
         line-height: normal;
         color: #333;
     }
-
     .top-divider {
         margin-top: 0;
     }
-
     .img-left {
         float: left;
         margin-right: 25px;
     }
-
     .address-bar {
         display: inherit;
         margin: 0;
         padding: 0 0 40px;
         text-align: center;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         text-transform: uppercase;
         font-size: 1.25em;
         font-weight: 400;
         letter-spacing: 3px;
         color: #337AB7;
     }
-
     .navbar {
         border-radius: 0;
     }
-
     .navbar-header {
         display: none;
     }
-
     .navbar {
         min-height: 0;
     }
-
     .navbar-default {
         border: none;
         background: #fff;
-        background: rgba(255,255,255,0.9);
+        background: rgba(255, 255, 255, 0.9);
     }
-
     .nav>li>a {
         padding: 20px;
     }
-
+    
     .navbar-nav>li>a {
         line-height: normal;
     }
-
+    
     .navbar-nav {
         display: table;
         float: none;
@@ -180,13 +178,14 @@ footer p {
 
 /*Styling Profile pic appended to Navbar*/
 
-.profilePic{
+.profilePic {
     border-radius: 50%;
     height: 3.5rem;
     width: 3.5rem;
     float: right;
 }
-.profileWelcome{
+
+.profileWelcome {
     float: right;
     font-size: .75rem;
     height: 3rem;
@@ -194,7 +193,7 @@ footer p {
     padding-top: 1.5rem;
 }
 
-.displayName{
+.displayName {
     font-size: 2rem;
     font-weight: bold;
 }
@@ -207,11 +206,12 @@ footer p {
     }
 }
 
-@media screen and (max-width: 768px){
-    .profileWelcome{
+@media screen and (max-width: 768px) {
+    .profileWelcome {
         display: none;
     }
 }
+
 
 /*additional CSS added*/
 
@@ -229,30 +229,31 @@ footer p {
     border-color: #fff;
 }
 
-.btn-min-block {
-    min-width: 170px;
-    line-height: 26px;
-}
-
 .btn {
     padding: 10px 20px 10px 30px;
     font-size: 2rem;
     color: white;
     font-family: 'Poiret One';
 }
+
 .align-button {
     text-align: center;
     padding: 10px 0 10px 0;
 }
 
+
 /*Host Party and Attend Party are hidden until user has been authenticated*/
-.attendParty, .hostParty{
+
+.attendParty,
+.hostParty {
     display: none;
 }
+
 .signUp {
     position: relative;
     right: 10px;
 }
+
 /* PartySync logo color animation */
 
 .brand-name {
@@ -265,16 +266,31 @@ footer p {
 }
 
 @-webkit-keyframes colours {
-      0% {color: #39f;}
-     15% {color: #8bc5d1;}
-     30% {color: #f8cb4a;}
-     45% {color: #95b850;}
-     60% {color: #944893;}
-     75% {color: #c71f00;}
-     90% {color: #bdb280;}
-    100% {color: #39f;}
+    0% {
+        color: #39f;
+    }
+    15% {
+        color: #8bc5d1;
+    }
+    30% {
+        color: #f8cb4a;
+    }
+    45% {
+        color: #95b850;
+    }
+    60% {
+        color: #944893;
+    }
+    75% {
+        color: #c71f00;
+    }
+    90% {
+        color: #bdb280;
+    }
+    100% {
+        color: #39f;
+    }
 }
-
 
 div.clearfix {
     margin-bottom: 10px;
@@ -285,8 +301,16 @@ div.col-lg-12 {
     padding-bottom: 10px;
 }
 
+h3 {
+    text-align: center;
+}
+/*New March 4*/
 .faq {
     padding: 10px 0 10px 0;
+}
+/*New March 4*/
+.faqs {
+    text-align: center;
 }
 
 .collapse {
@@ -300,32 +324,39 @@ div.col-lg-12 {
 
 div.col-md-6 {
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 
 /* GOOGLE MAPS */
+
 #map-canvas {
     width: 100%;
     height: 400px;
 }
+
 .info-window-text {
     font-size: 1rem;
 }
+
 #side-bar-data {
     float: right;
     overflow: scroll;
     height: 400px;
     font-size: 1rem;
 }
+
 .side-bar-border {
     width: 100%;
-    border-bottom: 1px solid #E0E0E0 ;
+    border-bottom: 1px solid #E0E0E0;
     padding: 5px;
     text-align: left;
 }
+
 .searched-party {
     font-size: 1.5rem;
 }
+
 .address-input,
 .description-input,
 .age-input,
@@ -336,6 +367,7 @@ div.col-md-6 {
 .phone-input {
     margin: 10px 0 10px 0;
 }
+
 .search-input {
     padding: 25px;
     width: 53%;
@@ -343,20 +375,30 @@ div.col-md-6 {
     left: 10%;
     top: 32px;
 }
+
 .text-green {
     color: green;
 }
+
 #map-address-btn {
     position: relative;
     left: 20%;
     bottom: 20px;
 }
+
 /*Social Medial Modal styling*/
-.btn-social{
+
+.btn-social {
     width: 175px;
     margin-bottom: 1.5rem;
 }
+/*New March 4*/
+.text-green {
+    color: green;
+}
+
 /* ABOUT page */
+
 .round-img {
     width: 300px;
     height: 270px;
@@ -364,10 +406,16 @@ div.col-md-6 {
     margin-left: auto;
     margin-right: auto;
 }
+
 .foot-row {
     padding: 25px 0 25px 0;
 }
+
 .text-white {
     color: white;
 }
-
+/*New March 4*/
+ol {
+    background-color: #f8cb4a;
+    border-radius: 5px;
+}
