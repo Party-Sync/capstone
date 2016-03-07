@@ -135,7 +135,7 @@ $(document).ready(function() {
                 });
             }
             else {
-                $(this).css({"border": "", "background": ""});
+                $(this).css({"border": "1px solid green", "background": "white"});
             }
         });
         if (isValid == false) {
