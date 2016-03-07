@@ -410,6 +410,10 @@ div.col-md-6 {
 .foot-row {
     padding: 25px 0 25px 0;
 }
+.foot-row p {
+    position: relative;
+    right: 20px;
+}
 
 .text-white {
     color: white;
