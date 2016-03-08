@@ -313,8 +313,11 @@ h3 {
     text-align: center;
 }
 
-.collapse {
+#collapseFaqs {
     margin: 30px;
+}
+
+.collapse {
     font-size: 1.25em;
     line-height: 1.6;
 }
