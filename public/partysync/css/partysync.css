@@ -314,8 +314,7 @@ h3 {
 }
 
 .collapse {
-    margin-left: 250px;
-    margin-right: 250px;
+    margin: 30px;
     font-size: 1.25em;
     line-height: 1.6;
 }

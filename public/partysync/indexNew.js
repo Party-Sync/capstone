@@ -181,7 +181,7 @@ $(document).ready(function() {
 
 // Social Account User Authentication
 function logInUser(image, name){
-    $("#register").modal('hide')
+    $("#register").modal('hide');
     $('.hostParty, .attendParty').css('display', 'inherit');
     $('.signUp').css('display', 'none');
     $('.form-container').css('display', 'inherit');
