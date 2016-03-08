@@ -71,7 +71,7 @@ function codeAddress(address, description, time, space, age, search, email, phon
                 console.log("ERROR: OVER QUERY LIMIT");
             }, 200);
         } else {
-                alert('Geocode was not successful for the following reason: ' + status);
+            alert('Geocode was not successful for the following reason: ' + status);
         }
     });
 }
