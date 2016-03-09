@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>PartySync</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/partysync.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One|Shadows+Into+Light|Dancing+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css">
+    <!-- check icon for success on user post -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle text-center" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+
+                <a class="navbar-brand" href="indexNew.html">PartySync</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="indexNew.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <h2 class="brand-before">
+                    <hr>
+                        <small>Welcome to</small>
+                    </h2>
+                        <h1 class="brand-name" id="registerFaq">PartySync</h1>
+                        <hr class="tagline-divider">
+                        <h2>
+                        <small>
+                        </small>
+                    </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-button">
+            <div class="col-lg-5 col-md-5 col-sm-5">
+                <a class="btn btn-theme btn-sm hostParty" href="#" data-toggle="modal" data-target="#myModal">Host a Party</a>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <a class="btn btn-theme btn-sm signUp" href="#" data-toggle="modal" data-target="#register">Sign Up/Login</a>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5">
+                <a class="btn btn-theme btn-sm attendParty" href="#" data-toggle="modal" data-target="#testModal">Attend a Party</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <hr>
+                        <h2 class="brand-before">
+                            <small>We've all been there, new to town or plans fell through with nothing to do</small <br>
+                        </h2>
+                        <h2 class="intro-text brand-before text-center">
+                        <strong><p> That's where PartySync comes to the rescue!</p></strong>
+                        </h2>
+                        <hr class="tagline-divider">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center faq">
+            <a class="btn btn-theme btn-sm" role="button" data-toggle="collapse" href="#collapseFaqs" aria-expanded="false" aria-controls="collapseFaqs">How this works? - FAQs</a>
+        </div>
+        <h4 class="panel-title"> 
+            <a data-toggle="collapse" data-parent="#accordion" href="#accordionTwo">
+            </a>
+        </h4>
+        <div class="row">
+            <div class="box">
+                <div class="container col-lg-12">
+                    <div id="carousel-example-generic2" class="carousel slide">
+                        <div class="collapse" id="collapseFaqs">
+                            <small>                            
+                                        <h3>The Who's & How's of PartySync</h3>
+                                    <p class="faqs">
+                                        Adventurous, social souls that enjoy meeting new people and seeing new places!  Perhaps you're new to town or just wanting to expand your circle of friends, PartySync is for <strong>YOU!</strong>
+                                    </p>
+                                    <hr class="tagline-divider">
+                                    <br>
+                                    <ol>
+                                        <li><strong><a href="#registerFaq">Sign up!</a></strong></li>
+                                    <ul>
+                                        <li>After signing up/logging in:  You now have full access!<br>
+                                            List a party or search for parties--Both are a breeze!</li>
+                                    </ul>
+                                    <li><strong>Hosts:</strong></li>
+                                    <ul>
+                                        <li>Perhaps you had some last minute cancellations or you just want to meet new, like-minded friends.  Simply fill-out the short Host form and you'll be all set to review potential guests.</li>
+                                        </ul>                                          
+                                    <li><strong>How to find Parties?</strong></li>
+                                    <ul>
+                                        <li>Easy!  Click Search, type in the requested info, and Voila! Available parties are mapped - just contact the host for current availability, any specific requirements and party address.</li>
+                                        </ul>
+                                    <li><strong>More questions/comments/suggestions?</strong></li>
+                                    <ul>
+                                        <li>Send an email to:  webdevkate@gmail.com</li>
+                                    </ul>
+                                </ol>
+                            </small>
+                        </div>
+                    </div>
+                                    <h5><p class="text-white text-center"><small>&copy; PartySync 2016</small></p></h5>
+                </div>
+            </div>
+        </div>
+        <!--<div class="container">
+            <div class="row text-center foot-row">
+                <h5><p class="text-white"><small>&copy; PartySync 2016</small></p></h5>
+            </div>
+        </div>-->
+
+        <!-- Modal for MAPS AND SIDEBAR -->
+        <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header hostModal">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h2 class="modal-title" id="myModalLabel">FIND IT</h2>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Seach party input field with submit button -->
+                        <div class="row search-center text-center">
+                            <input id="location-address" type="text" class="search-input form-control text-center" placeholder="Enter City Name">
+                            <button id="map-address-btn" class="btn btn-primary btn-sm"><span>Map It</span></button>
+                        </div>
+
+                        <!-- Side Bar and Google Map -->
+                        <div class="row map-row">
+                            <div class="col-xs-8 col-sm-8 col-md-8 map-col">
+                                <div id="map-canvas"></div>
+                            </div>
+                            <div id="side-bar-data" class="col-xs-4 col-sm-4 col-md-4 side-bar">
+                                <!-- data appeneded in main.js -->
+                            </div>
+                        </div>
+                        <!-- END of sidebar and map -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+
+        </div>
+        <!-- /.modal -->
+
+        <!-- Modal for HOST FORM -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h2 class="modal-title" id="myModalLabel">Host Form</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-container">
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <p>
+                                            <input id="address" class="address-input form-control empty-input input-lg" name="address" type="text" placeholder="Enter Address">
+                                        </p>
+                                        <p>
+                                            <input id="description" class="description-input form-control empty-input input-lg" name="description" type="text" placeholder="Type">
+                                        </p>
+                                        <p>
+                                            <input id="age" class="age-input form-control empty-input input-lg" name="age" type="text" placeholder="Age restriction">
+                                        </p>
+                                        <p>
+                                            <input id="guest-max" class="guest-input form-control empty-input input-lg" name="guest" type="text" placeholder="Max Guests">
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <p>
+                                            <input id="time" class="time-input form-control empty-input input-rt input-lg" name="time" type="text" placeholder="Start-End Time">
+                                        </p>
+                                        <p>
+                                            <input id="email" class="email-input form-control empty-input input-rt input-lg" name="email" type="email" placeholder="Email" required>
+                                        </p>
+                                        <p>
+                                            <input id="phoneNumber" class="phone-input form-control empty-input  input-rt input-lg" name="phoneNumber" type="text" placeholder="Phone Number">
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="post-success">
+                                    <!-- Append success of user party post here -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            Close
+                        </button>
+                        <!-- SUBMIT and add the form data into Firebase -->
+                        <!-- <input id="post-party-btn" class="btn btn-primary" type="submit"> -->
+                        <button id="post-party-btn" class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal host form -->
+
+        <!-- Register/Sign In Modal content-->
+        <div id="register" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Select Your Preferred Social Media Account to Continue:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4">
+                                <button type- "button" class="btn-social btn-facebook btn-lg">
+                                    <span class="fa fa-facebook"></span>Facebook
+                                </button>
+                            </div>
+                            <div class="col-sm-4 col-lg-4">
+                                <button type- "button" class="btn-social btn-twitter btn-lg">
+                                    <span class="fa fa-twitter"></span>Twitter
+                                </button>
+                            </div>
+                            <div class="col-sm-4 col-lg-4">
+                                <button type- "button" class="btn-social btn-google btn-lg">
+                                    <span class="fa fa-google"></span>Google
+                                </button>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Register Modal End -->
+
+
+        <!-- Google Maps API Key -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChaHixMQ88Nfqh2jefnRQIn4aqJR84B60">
+        </script>
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="indexNew.js"></script>
+    </div>
+</body>
+
+</html>
